@@ -1,0 +1,140 @@
+
+
+    @font-face {
+        font-family: 'Prompt';
+        src: url('./fonts/Prompt-Bold.woff2') format('woff2'),
+        url('./fonts/Prompt-Bold.woff') format('woff');
+        font-weight: bold;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Prompt';
+        src: url('./fonts/Prompt-Black.woff2') format('woff2'),
+        url('./fonts/Prompt-Black.woff') format('woff');
+        font-weight: 900;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Prompt';
+        src: url('./fonts/Prompt-ExtraBold.woff2') format('woff2'),
+        url('./fonts/Prompt-ExtraBold.woff') format('woff');
+        font-weight: 800;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Prompt';
+        src: url('./fonts/Prompt-Medium.woff2') format('woff2'),
+        url('./fonts/Prompt-Medium.woff') format('woff');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Prompt';
+        src: url('./fonts/Prompt-Regular.woff2') format('woff2'),
+        url('./fonts/Prompt-Regular.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Prompt';
+        src: url('./fonts/Prompt-SemiBold.woff2') format('woff2'),
+        url('./fonts/Prompt-SemiBold.woff') format('woff');
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Red Hat Display';
+        src: url('./fonts/RedHatDisplay-Regular.woff2') format('woff2'),
+        url('./fonts/RedHatDisplay-Regular.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Red Hat Display';
+        src: url('./fonts/RedHatDisplay-ExtraBold.woff2') format('woff2'),
+        url('./fonts/RedHatDisplay-ExtraBold.woff') format('woff');
+        font-weight: bold;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Red Hat Display';
+        src: url('./fonts/RedHatDisplay-Bold.woff2') format('woff2'),
+        url('./fonts/RedHatDisplay-Bold.woff') format('woff');
+        font-weight: bold;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Red Hat Display';
+        src: url('./fonts/RedHatDisplay-Medium.woff2') format('woff2'),
+        url('./fonts/RedHatDisplay-Medium.woff') format('woff');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Red Hat Display';
+        src: url('./fonts/RedHatDisplay-SemiBold.woff2') format('woff2'),
+        url('./fonts/RedHatDisplay-SemiBold.woff') format('woff');
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Red Hat Display';
+        src: url('./fonts/RedHatDisplay-Black.woff2') format('woff2'),
+        url('./fonts/RedHatDisplay-Black.woff') format('woff');
+        font-weight: 900;
+        font-style: normal;
+        font-display: swap;
+    }
+
+
+    body {
+        color: #ffffff;
+        background-color: #000000;
+        height: 100vh;
+        overflow-x: hidden;
+        overscroll-behavior: none;
+    }
+
+
+
+
+/* GSAP STYLES */
+
+.container-screen2 {
+    overscroll-behavior: none;
+    /*width: 600%;*/
+    height: 100vh;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.container-screen2 .panel{
+    @apply w-screen h-full flex justify-center items-center;
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
