@@ -11,6 +11,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Observer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
 
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -55,7 +56,9 @@
                      alt=""
                 >
             </a>
-            <a href="#" class="px-4 py-1 text-green border-2 border-green rounded-full">Hablemos</a>
+            <nav>
+                <button id="section1Btn" class="px-4 py-1 text-green border-2 border-green rounded-full hover:bg-green hover:text-black">Hablemos</button>
+            </nav>
         </div>
     </header>
     <!-- End Header Section -->
@@ -65,21 +68,21 @@
         <!-- Init Screen 1 -->
         <section class="w-full min-h-screen flex flex-col justify-center items-center container-screen1">
             <img src="https://nativo-sitio-2024-static.s3.amazonaws.com/assets/images/nativo_torus.gif"
-                 class="w-1/2 max-w-[30rem] mx-auto screen1-torus"
+                 class="w-10/12 sm:w-1/2 max-w-[30rem] mx-auto screen1-torus"
                  alt="Nativo"
             >
         </section>
         <!-- End Screen 1 -->
 
         <!-- Init Screen 2 - NAV HORIZONTAL -->
-        <section class="container-screen2 w-[400%]">
+        <section class="container-screen2 w-[400%] text-4xl sm:text-8xl leading-[1.7rem] sm:leading-[4.26rem]">
             <div class="panel">
-                <div class="relative font-bold text-[10rem] leading-[7rem] screen2-text1">
+                <div class="relative font-bold max-w-[320px] sm:max-w-none text-[4rem] leading-[2.8rem] sm:text-[10rem] sm:leading-[7rem] screen2-text1">
                     <span class="inline-block translate-x-3">SOMOS</span>
                     <br>
                     NATIVO
 
-                    <div class="w-16 h-16 bg-violet rounded-full flex justify-center items-center absolute -right-16 -bottom-8">
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 bg-violet rounded-full flex justify-center items-center absolute -right-0 -bottom-14 sm:-right-16 sm:-bottom-8">
                         <svg class="w-4 h-4" viewBox="0 0 23 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M22.7148 9.51562C22.7148 9.9375 22.5625 10.2969 22.2578 10.5938L14.5586 18.2695C14.2539 18.5742 13.9141 18.7266 13.5391 18.7266C13.1094 18.7266 12.7617 18.5938 12.4961 18.3281C12.2305 18.0625 12.0977 17.7344 12.0977 17.3438C12.0977 17.125 12.1367 16.9297 12.2148 16.7578C12.3008 16.5859 12.4102 16.4336 12.543 16.3008L15.168 13.6523L19.3281 9.85547L19.8672 10.7344L15.6016 10.9805H1.77344C1.32812 10.9805 0.96875 10.8477 0.695312 10.582C0.421875 10.3086 0.285156 9.95312 0.285156 9.51562C0.285156 9.08594 0.421875 8.73828 0.695312 8.47266C0.96875 8.19922 1.32812 8.0625 1.77344 8.0625H15.6016L19.8672 8.29688L19.3281 9.19922L15.168 5.37891L12.543 2.73047C12.4102 2.59766 12.3008 2.44531 12.2148 2.27344C12.1367 2.09375 12.0977 1.89844 12.0977 1.6875C12.0977 1.29688 12.2305 0.96875 12.4961 0.703125C12.7617 0.4375 13.1094 0.304688 13.5391 0.304688C13.7188 0.304688 13.8945 0.34375 14.0664 0.421875C14.2461 0.492188 14.418 0.609375 14.582 0.773438L22.2578 8.4375C22.5625 8.73438 22.7148 9.09375 22.7148 9.51562Z" fill="white"/>
                         </svg>
@@ -87,14 +90,14 @@
                 </div>
             </div>
             <div class="panel">
-                <div class="relative font-bold text-8xl leading-[4.26rem]">
+                <div class="relative font-bold max-w-[320px] sm:max-w-none ">
                     INNOVAMOS CON
                     <br>
                     CREATIVIDAD
                     <br>
                     <span class="text-violet">LIBRE Y VALIENTE.</span>
 
-                    <div class="w-16 h-16 border border-violet rounded-full flex justify-center items-center absolute -right-20 -bottom-12">
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 border border-violet rounded-full flex justify-center items-center absolute -right-0 -bottom-14 sm:-right-16 sm:-bottom-8">
                         <svg class="w-4 h-4" viewBox="0 0 23 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M22.7148 9.51562C22.7148 9.9375 22.5625 10.2969 22.2578 10.5938L14.5586 18.2695C14.2539 18.5742 13.9141 18.7266 13.5391 18.7266C13.1094 18.7266 12.7617 18.5938 12.4961 18.3281C12.2305 18.0625 12.0977 17.7344 12.0977 17.3438C12.0977 17.125 12.1367 16.9297 12.2148 16.7578C12.3008 16.5859 12.4102 16.4336 12.543 16.3008L15.168 13.6523L19.3281 9.85547L19.8672 10.7344L15.6016 10.9805H1.77344C1.32812 10.9805 0.96875 10.8477 0.695312 10.582C0.421875 10.3086 0.285156 9.95312 0.285156 9.51562C0.285156 9.08594 0.421875 8.73828 0.695312 8.47266C0.96875 8.19922 1.32812 8.0625 1.77344 8.0625H15.6016L19.8672 8.29688L19.3281 9.19922L15.168 5.37891L12.543 2.73047C12.4102 2.59766 12.3008 2.44531 12.2148 2.27344C12.1367 2.09375 12.0977 1.89844 12.0977 1.6875C12.0977 1.29688 12.2305 0.96875 12.4961 0.703125C12.7617 0.4375 13.1094 0.304688 13.5391 0.304688C13.7188 0.304688 13.8945 0.34375 14.0664 0.421875C14.2461 0.492188 14.418 0.609375 14.582 0.773438L22.2578 8.4375C22.5625 8.73438 22.7148 9.09375 22.7148 9.51562Z" fill="white"/>
                         </svg>
@@ -102,7 +105,7 @@
                 </div>
             </div>
             <div class="panel">
-                <div class="relative font-bold text-8xl leading-[4.26rem]">
+                <div class="relative font-bold max-w-[320px] sm:max-w-none ">
                     CREAMOS
                     <br>
                     CONEXIONES
@@ -113,7 +116,7 @@
                     <br>
                     <span class="text-violet">DIVERSAS</span>
 
-                    <div class="w-16 h-16 border border-violet rounded-full flex justify-center items-center absolute -right-20 -bottom-12">
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 border border-violet rounded-full flex justify-center items-center absolute -right-0 -bottom-14 sm:-right-16 sm:-bottom-8">
                         <svg class="w-4 h-4" viewBox="0 0 23 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M22.7148 9.51562C22.7148 9.9375 22.5625 10.2969 22.2578 10.5938L14.5586 18.2695C14.2539 18.5742 13.9141 18.7266 13.5391 18.7266C13.1094 18.7266 12.7617 18.5938 12.4961 18.3281C12.2305 18.0625 12.0977 17.7344 12.0977 17.3438C12.0977 17.125 12.1367 16.9297 12.2148 16.7578C12.3008 16.5859 12.4102 16.4336 12.543 16.3008L15.168 13.6523L19.3281 9.85547L19.8672 10.7344L15.6016 10.9805H1.77344C1.32812 10.9805 0.96875 10.8477 0.695312 10.582C0.421875 10.3086 0.285156 9.95312 0.285156 9.51562C0.285156 9.08594 0.421875 8.73828 0.695312 8.47266C0.96875 8.19922 1.32812 8.0625 1.77344 8.0625H15.6016L19.8672 8.29688L19.3281 9.19922L15.168 5.37891L12.543 2.73047C12.4102 2.59766 12.3008 2.44531 12.2148 2.27344C12.1367 2.09375 12.0977 1.89844 12.0977 1.6875C12.0977 1.29688 12.2305 0.96875 12.4961 0.703125C12.7617 0.4375 13.1094 0.304688 13.5391 0.304688C13.7188 0.304688 13.8945 0.34375 14.0664 0.421875C14.2461 0.492188 14.418 0.609375 14.582 0.773438L22.2578 8.4375C22.5625 8.73438 22.7148 9.09375 22.7148 9.51562Z" fill="white"/>
                         </svg>
@@ -121,14 +124,14 @@
                 </div>
             </div>
             <div class="panel">
-                <div class="relative font-bold text-8xl leading-[4.26rem]">
+                <div class="relative font-bold max-w-[320px] sm:max-w-none ">
                     PARA TRASCENDER,
                     <br>
                     ES NECESARIO
                     <br>
                     <span class="text-violet">TRANSFORMAR</span>
 
-                    <div class="w-16 h-16 border border-violet rounded-full flex justify-center items-center absolute -right-20 -bottom-12">
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 border border-violet rounded-full flex justify-center items-center absolute -right-0 -bottom-14 sm:-right-16 sm:-bottom-8">
                         <svg class="w-4 h-4" viewBox="0 0 23 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M22.7148 9.51562C22.7148 9.9375 22.5625 10.2969 22.2578 10.5938L14.5586 18.2695C14.2539 18.5742 13.9141 18.7266 13.5391 18.7266C13.1094 18.7266 12.7617 18.5938 12.4961 18.3281C12.2305 18.0625 12.0977 17.7344 12.0977 17.3438C12.0977 17.125 12.1367 16.9297 12.2148 16.7578C12.3008 16.5859 12.4102 16.4336 12.543 16.3008L15.168 13.6523L19.3281 9.85547L19.8672 10.7344L15.6016 10.9805H1.77344C1.32812 10.9805 0.96875 10.8477 0.695312 10.582C0.421875 10.3086 0.285156 9.95312 0.285156 9.51562C0.285156 9.08594 0.421875 8.73828 0.695312 8.47266C0.96875 8.19922 1.32812 8.0625 1.77344 8.0625H15.6016L19.8672 8.29688L19.3281 9.19922L15.168 5.37891L12.543 2.73047C12.4102 2.59766 12.3008 2.44531 12.2148 2.27344C12.1367 2.09375 12.0977 1.89844 12.0977 1.6875C12.0977 1.29688 12.2305 0.96875 12.4961 0.703125C12.7617 0.4375 13.1094 0.304688 13.5391 0.304688C13.7188 0.304688 13.8945 0.34375 14.0664 0.421875C14.2461 0.492188 14.418 0.609375 14.582 0.773438L22.2578 8.4375C22.5625 8.73438 22.7148 9.09375 22.7148 9.51562Z" fill="white"/>
                         </svg>
@@ -140,7 +143,7 @@
 
         <!-- Init Screen 3 - VIDEO REEL -->
         <section class="w-full min-h-screen flex flex-col justify-center items-center container-screen3">
-            <video class="videoItem w-screen h-screen object-contain object-center px-8 mx-auto screen3-videoItem" autoplay muted loop>
+            <video class="videoItem w-screen h-screen object-contain object-center sm:px-8 mx-auto screen3-videoItem" autoplay muted loop>
                 <source src="https://nativo-sitio-2024-static.s3.amazonaws.com/assets/images/reel_nativo.mp4" type="video/mp4">
             </video>
         </section>
@@ -175,17 +178,17 @@
 
         <!-- Init Screen 6 - TEXT LIDERAR -->
         <section class="w-full min-h-screen flex flex-col justify-center items-center container-screen6">
-            <div class="relative text-white font-bold text-[6rem] leading-[4.3rem]" id="screen6-textContent">
-                <img src="assets/images/open_quotes.png" class="absolute -top-28 left-0" alt="Quote">
+            <div class="relative text-white font-bold text-[2.2rem] leading-[1.7rem] sm:text-[6rem] sm:leading-[4.3rem]" id="screen6-textContent">
+                <img src="assets/images/open_quotes.png" class="absolute w-20 sm:w-28 -top-16 sm:-top-28 left-0" alt="Quote">
                 <span>LIDERAR LA</span>
                 <br>
                 <span>TRANSFORMACIÓN</span>
                 <br>
                 <span class="text-violet">CREATIVA</span> DE LA
                 <br>
-                <span class="text-[12rem] leading-[8.5rem]">INDUSTRIA</span>
+                <span class="text-[4rem] leading-[2.8rem] sm:text-[12rem] sm:leading-[8.5rem]">INDUSTRIA</span>
 
-                <img src="assets/images/close_quotes.png" class="absolute -bottom-28 right-0" alt="Quote">
+                <img src="assets/images/close_quotes.png" class="absolute w-20 sm:w-28 -bottom-16 sm:-bottom-28 right-0" alt="Quote">
             </div>
         </section>
         <!-- End Screen 6 -->
@@ -194,10 +197,12 @@
         <section class="relative w-full min-h-screen flex flex-col justify-center items-center container-screen8">
             <div class="bg-grid bg-no-repeat bg-cover absolute top-0 left-0 w-screen h-screen screen8-bg-grid"></div>
             <div class="w-full overflow-hidden">
-                <div class="textItem inline-block align-middle text-white box font-bold text-[6rem] whitespace-nowrap space-x-8 py-16" id="screen8-textItem">
+                <div class="textItem inline-block align-middle text-white box font-bold text-[4rem] sm:text-[6rem] whitespace-nowrap space-x-8 py-16" id="screen8-textItem">
 
-                    <div class="inline-block align-middle w-screen text-[8rem] text-center screen8-text1">
-                        NATIVO - NÚMEROS
+                    <div class="inline-block align-middle w-screen text-[3.6rem] sm:text-[8rem] leading-[2.8rem] sm:leading-[6rem] text-center screen8-text1">
+                        NATIVO EN
+                        <br>
+                        <span class="text-[4rem] sm:text-[9rem]">NÚMEROS</span>
                     </div>
                     <div class="inline-block align-middle screen8-text1 pl-32">
                         TENEMOS <span class="text-violet">12 AÑOS</span> EXISTIENDO
@@ -209,20 +214,20 @@
                     <div class="inline-block">
                         HEMOS COLABORADO CON MÁS DE
                     </div>
-                    <div class="relative inline-block align-middle text-violet text-[9rem] pb-6">
+                    <div class="relative inline-block align-middle text-violet text-[6rem] sm:text-[9rem] pb-6">
                         200 MARCAS
-                        <span class="absolute bottom-6 right-0 text-white text-[2rem]">* A LO LARGO DE LA HISTORIA</span>
+                        <span class="absolute bottom-6 right-0 text-white text-[1.5rem] sm:text-[2rem]">* A LO LARGO DE LA HISTORIA</span>
                     </div>
                     <div class="inline-block align-middle">
                         <svg class="inline-block w-16 h-16" viewBox="0 0 63 87" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M51.85 87L0.400001 43.8L52.15 0.599994L62.5 12.6L24.55 43.65L62.5 74.7L51.85 87Z" fill="white"/>
                         </svg>
                         <div class="inline-block relative align-middle">
-                            <video class="w-[42rem] px-16" autoplay muted loop>
+                            <video class="w-[32rem] sm:w-[42rem] px-16" autoplay muted loop>
                                 <source src="https://nativo-sitio-2024-static.s3.amazonaws.com/assets/images/reel_phone.mp4" type="video/mp4">
                             </video>
                             <img src="assets/images/phone.png"
-                                class="inline-block w-[40rem] absolute -top-4 left-4"
+                                class="inline-block w-[30rem] sm:w-[40rem] absolute -top-4 left-4"
                                 alt="Nativo noise"
                             >
                             <span class="absolute -bottom-20 left-0 w-full text-center text-[2.5rem]">EN 40 <span class="text-violet">PAÍSES</span></span>
@@ -241,22 +246,22 @@
         <!-- End Screen 8 - NAV HORIZONTAL-->
 
         <!-- Init Screen 9 - ESENCIA QUE NOS DEFINE -->
-        <section class="w-full h-[4000px] container-screen9">
+        <section class="w-full h-screen container-screen9">
 
-            <div class="screen9-main w-full min-h-screen flex justify-center items-center">
-                <div class="relative w-[50vh] h-[50vh] flex justify-center items-center">
+            <div class="screen9-main w-full min-h-screen flex justify-center items-center pt-40">
+                <div class="relative w-[40vh] h-[40vh] sm:w-[50vh] sm:h-[50vh] flex justify-center items-center">
 
                     <img src="https://nativo-sitio-2024-static.s3.amazonaws.com/assets/images/circle.gif"
-                         class="w-[50vh] h-[50vh] object-contain screen10-circle absolute top-0 left-0"
+                         class="w-[40vh] h-[40vh] sm:w-[50vh] sm:h-[50vh] object-contain screen10-circle absolute top-0 left-0"
                          alt="Nativo"
                     >
 
-                    <div class="absolute -top-[13rem] left-[9.5rem] z-10 opacity-0 screen9-estrategia">
+                    <div class="absolute min-w-[9rem] -top-[10.5rem] left-[6.5rem] sm:-top-[13rem] sm:left-[8.5rem] z-10 screen9-estrategia">
                         <img src="/assets/images/icon_estrategia.png"
-                             class="w-40"
+                             class="w-28 sm:w-40 mx-auto"
                              alt="Nativo - Estrategia"
                         >
-                        <h3 class="text-center font-bold text-xl">ESTRATEGIA</h3>
+                        <h3 class="text-center font-bold text-base sm:text-xl">ESTRATEGIA</h3>
                         <p class="text-violet font-red text-center leading-5">
                             Conexiones reales.
                             <br>
@@ -264,12 +269,12 @@
                         </p>
                     </div>
 
-                    <div class="absolute -bottom-[2rem] -left-[7rem] z-10">
+                    <div class="absolute min-w-[9rem] -bottom-[9rem] -left-[2.5rem] sm:-bottom-[2rem] sm:-left-[7rem] z-10">
                         <img src="/assets/images/icon_creatividad.png"
-                             class="w-40"
+                             class="w-28 sm:w-40 mx-auto"
                              alt="Nativo - Estrategia"
                         >
-                        <h3 class="text-center font-bold text-xl">CREATIVIDAD</h3>
+                        <h3 class="text-center font-bold text-base sm:text-xl">CREATIVIDAD</h3>
                         <p class="text-violet font-red text-center leading-5">
                             Creatividad
                             <br>
@@ -277,12 +282,12 @@
                         </p>
                     </div>
 
-                    <div class="absolute -bottom-[2rem] -right-[7.5rem] z-10">
+                    <div class="absolute min-w-[9rem] -bottom-[9rem] -right-[3.5rem] sm:-bottom-[2rem] sm:-right-[7.5rem] z-10">
                         <img src="/assets/images/icon_innovacion.png"
-                             class="w-40"
+                             class="w-28 sm:w-40 mx-auto"
                              alt="Nativo - Estrategia"
                         >
-                        <h3 class="text-center font-bold text-xl">INNOVACIÓN</h3>
+                        <h3 class="text-center font-bold text-base sm:text-xl">INNOVACIÓN</h3>
                         <p class="text-violet font-red text-center leading-5">
                             Para trascender,
                             <br>
@@ -290,7 +295,7 @@
                         </p>
                     </div>
 
-                    <div class="font-bold text-[3rem] leading-[2.2rem] z-10 absolute screen9-text1">
+                    <div class="font-bold text-[1.9rem] leading-[1.4rem] sm:text-[3rem] sm:leading-[2.2rem] z-10 absolute screen9-text1">
                         LA ESENCIA
                         <br>
                         QUE NOS
@@ -298,7 +303,7 @@
                         DEFINE
                     </div>
 
-                    <div class="font-red z-10 opacity-0 absolute px-32 screen9-estrategia-content">
+                    <div class="font-red z-10 opacity-0 absolute px-32 screen9-estrategia-content hidden">
                         <ul class="list-disc pl-8">
                             <li>Apps & Web.</li>
                             <li>UX/UI.</li>
@@ -316,23 +321,48 @@
 
         </section>
         <!-- End Screen 9 - NAV HORIZONTAL-->
+        <section class="py-16" id="section1">
+            <h1 class="font-bold text-[3.6rem] leading-[2.8rem] md:text-[8rem] md:leading-[6.1rem] text-center mb-8 md:mb-16">
+                <span class="text-violet">HABLA</span> CON
+                <br>
+                <span class="text-[4rem] md:text-[8.9rem]">NOSOTROS</span>
+            </h1>
+            <div class="text-[2rem] leading-[1.6rem] md:text-[4rem] md:leading-[3rem] flex flex-col justify-center item-center">
+                <a class="block font-bold text-center hover:text-violet" href="#">WHATSAPP</a>
+                <a class="block font-bold text-center hover:text-violet" href="mailto:hello@nativo.company">HELLO@NATIVO.COMPANY</a>
+                <a class="block font-bold text-center hover:text-violet" href="https://mx.linkedin.com/company/nativocom">LINKEDIN</a>
+                <a class="block font-bold text-center hover:text-violet" href="https://www.instagram.com/nativocom">INSTAGRAM</a>
+            </div>
+        </section>
 
     </main>
 
     <script>
         // use a script tag or an external JS file
         document.addEventListener("DOMContentLoaded", (event) => {
-            gsap.registerPlugin(ScrollTrigger,Observer)
+            gsap.registerPlugin(ScrollTrigger,Observer,ScrollToPlugin)
+
+
+            // SCROLL TO
+            document.querySelectorAll("nav button").forEach((btn, index) => {
+                btn.addEventListener("click", () => {
+                    gsap.to(window, {duration: 1, scrollTo:{y:"#section" + (index + 1), offsetY:70}});
+                });
+            });
 
             // gsap code here!
             // SECREEN 1
             gsap.to('.container-screen1 .screen1-torus', {
-                opacity: 1,
-                scale: 1.2,
-                duration: 1,
+                opacity: 0,
                 ease: "none",
-                repeat: -1,
-                yoyo: true
+                scrollTrigger: {
+                    trigger: ".container-screen1",
+                    toggleActions: "play none play reverse",
+                    pin: true,
+                    start: "top top",
+                    markers: false,
+                    scrub: 1
+                }
             })
 
             // SCREEN 2
@@ -378,7 +408,7 @@
                     trigger: ".container-screen3",
                     pin: false,
                     start: "top bottom",
-                    end: "top center-=400",
+                    end: "top center-=200",
                     markers: false,
                     scrub: 1
                 }
@@ -448,6 +478,7 @@
 
             // SECREEN 9 - ESENCIA QUE NOS DEFINE
             // Somos Nativo Text
+            /*
             gsap.fromTo('.screen9-main', {
 
             },{
@@ -459,6 +490,7 @@
                     markers: false
                 }
             });
+
 
             gsap.to('.screen9-text1', {
                 opacity: 0,
@@ -472,7 +504,11 @@
                     scrub: 1
                 }
             });
+            */
+
+
             // ESTRATEGIA
+            /*
             gsap.to('.screen9-estrategia', {
                 opacity: 1,
                 ease: 'none',
@@ -497,6 +533,7 @@
                     scrub: 1
                 }
             });
+            */
 
 
 
