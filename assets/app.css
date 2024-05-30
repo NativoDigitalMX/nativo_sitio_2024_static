@@ -138,3 +138,29 @@
     align-items: center;
 }
 
+
+
+
+    .container-screen9 {
+        position: relative;
+        padding-bottom: 56.25%; /* to maintain aspect ratio (responsive!) */
+    }
+    .screen9-step {
+        width: 100%;
+        height: 100%;
+    }
+    .screen9-step1 {
+        position: absolute;
+        overflow: hidden;
+        top: 0;
+        transform: translate(100%, 0px);
+    }
+    .screen9-step1 img {
+        transform: translate(-100%, 0px);
+    }
+    .screen9-step img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+    }
