@@ -143,15 +143,15 @@
         <!-- End Screen 2 - NAV HORIZONTAL-->
 
         <!-- Init Screen 3 - VIDEO REEL -->
-        <section class="w-full min-h-screen flex flex-col justify-center items-center container-screen3">
-            <video class="videoItem w-screen h-screen object-contain object-center sm:px-8 mx-auto screen3-videoItem" autoplay muted loop>
+        <section class="w-full sm:min-h-screen flex flex-col justify-center items-center container-screen3">
+            <video class="videoItem w-screen h-auto sm:h-screen object-contain object-center sm:px-8 mx-auto screen3-videoItem" autoplay muted loop>
                 <source src="https://nativo-sitio-2024-static.s3.amazonaws.com/assets/images/reel_nativo.mp4" type="video/mp4">
             </video>
         </section>
         <!-- End Screen 3 -->
 
         <!-- Init Screen 4 - NUESTRO PROPOSITO -->
-        <section class="w-full flex flex-col justify-center items-center mt-60 px-8 container-screen4">
+        <section class="w-full flex flex-col justify-center items-center mt-20 sm:mt-40 container-screen4">
             <div class="w-full overflow-hidden pb-16">
                 <div class="textItem inline-block text-white box font-bold text-[5rem] sm:text-[8rem] whitespace-nowrap" id="screen4-textItem">
                     NUESTRO PROPÓSITO
@@ -178,7 +178,7 @@
         <!-- End Screen 5 -->
 
         <!-- Init Screen 6 - TEXT LIDERAR -->
-        <section class="w-full min-h-screen flex flex-col justify-center items-center container-screen6">
+        <section class="w-full pt-40 sm:pt-0 sm:min-h-screen flex flex-col justify-center items-center container-screen6">
             <div class="relative text-white font-bold text-[2.2rem] leading-[1.7rem] sm:text-[6rem] sm:leading-[4.3rem]" id="screen6-textContent">
                 <img src="assets/images/open_quotes.png" class="absolute w-20 sm:w-28 -top-16 sm:-top-28 left-0" alt="Quote">
                 <span>LIDERAR LA</span>
@@ -452,7 +452,7 @@
             gsap.fromTo(".container-screen8 .textItem", {
                 x: 0,
             }, {
-                x: (document.getElementById('screen8-textItem').offsetWidth + 1000)*-1,
+                x: (document.getElementById('screen8-textItem').offsetWidth + 250)*-1,
                 ease: 'none',
                 scrollTrigger: {
                     trigger: ".container-screen8",
