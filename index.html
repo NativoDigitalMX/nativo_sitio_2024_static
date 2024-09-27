@@ -64,7 +64,7 @@
                 <nav class="flex justify-end items-center gap-8">
                     <button data-link="inicio" class="link">Inicio</button>
                     <button data-link="servicios" class="link">Servicios</button>
-                    <button data-link="clientes" class="link">Clientes</button>
+                    <button data-link="partners" class="link">Partners</button>
                     <button data-link="hablemos" class="link px-4 py-1 text-green border-2 border-green rounded-full hover:bg-green hover:text-black">Hablemos</button>
                 </nav>
             </div>
@@ -210,7 +210,10 @@
                         <div class="inline-block align-middle w-screen text-[3.6rem] sm:text-[8rem] leading-[2.8rem] sm:leading-[6rem] text-center screen8-text1">
                             NATIVO EN
                             <br>
-                            <span class="text-[4rem] sm:text-[9rem]">NÚMEROS</span>
+                            <span class="relative text-[4rem] sm:text-[9rem]">
+                                <span class="absolute text-violet top-[1.1rem] left-[4rem] sm:top-[2.5rem] sm:left-[8.5rem]">´</span>
+                                NUMEROS
+                            </span>
                         </div>
                         <div class="inline-block align-middle screen8-text1 pl-32">
                             TENEMOS <span class="text-violet">12 AÑOS</span> EXISTIENDO
@@ -246,7 +249,7 @@
 
                         </div>
                         <div class="inline-block">
-                            EN 3 <span class="text-violet">IDIOMAS</span> DISTINTOS.
+                            EN <span class="text-violet">3 IDIOMAS</span> DISTINTOS.
                         </div>
                     </div>
                 </div>
@@ -409,13 +412,15 @@
             </div>
 
             <!-- Init Screen 10 Titulo -->
-            <div class="w-full min-h-screen flex flex-col justify-center items-center container-title-services" >
-                <h2 class="text-8xl font-bold title-services">SERVICIOS</h2>
+            <div class="w-full min-h-screen flex flex-col justify-center items-center container-title-services" id="section_servicios">
+                <h2 class="text-5xl md:text-6xl lg:text-8xl font-bold text-center title-clients">
+                    SERVICIOS
+                </h2>
             </div>
             <!-- End Screen 10 titulo -->
 
             <!-- End Screen 10 - SERVICIOS-->
-            <div class="py-16 mt-16 min-h-screen flex flex-col justify-center items-center" id="section_servicios">
+            <div class="py-16 mt-16 min-h-screen flex flex-col justify-center items-center">
                 <div class="container">
                     <h2 class="font-red font-bold text-4xl mb-4">Servicios</h2>
                     <div class="flex justify-center items-start gap-16">
@@ -438,7 +443,7 @@
                                 <img v-if="service_active == 15" src="/assets/images/servicios/creatividad/internal_hubs.png" class="w-full h-[24rem] object-contain object-center" alt="Gif Social Media">
                                 <img v-if="service_active == 16" src="/assets/images/servicios/innovation/PhygitaLab.gif" class="w-full h-[24rem] object-contain object-center" alt="Gif Social Media">
                             </div>
-                            <div class="flex flex-wrap mt-8 text-violet text-sm gap-2">
+                            <div class="flex flex-wrap mt-8 text-violet font-bold text-sm gap-2">
                                 <template v-if="service_active == 2">
                                     <div class="border border-violet rounded-full px-4 py-2">Data Driven Marketing (DDM)</div>
                                     <div class="border border-violet rounded-full px-4 py-2">Parrillas de contenido</div>
@@ -543,35 +548,35 @@
                         </div>
                         <div class="w-1/2">
                             <ul class="space-y-4">
-                                <li class="text-gray text-5xl">
-                                    <div @click="showPilarServices(1)" class="font-bold hover:bg-violet hover:text-white cursor-pointer">CREATIVIDAD</div>
+                                <li class="text-gray text-base md:text-5xl">
+                                    <div @click="showPilarServices(1)" class="font-bold hover:bg-violet transition-all hover:text-white cursor-pointer">CREATIVIDAD</div>
                                     <ul v-if="pilar_active == 1" class="pl-10 font-extralight space-y-2">
-                                        <li @mouseover="showService(1)" class="hover:bg-violet hover:text-white cursor-pointer" :class="service_active == 1 ? 'bg-violet text-white' : ''"><strong class="font-bold">CAMPAÑAS</strong></li>
-                                        <li @mouseover="showService(2)" class="hover:bg-violet hover:text-white cursor-pointer" :class="service_active == 2 ? 'bg-violet text-white' : ''">SOCIAL<strong class="font-bold">MEDIA</strong></li>
-                                        <li @mouseover="showService(3)" class="hover:bg-violet hover:text-white cursor-pointer" :class="service_active == 3 ? 'bg-violet text-white' : ''">INTERNAL<strong class="font-bold">HUBS</strong></li>
-                                        <li @mouseover="showService(4)" class="hover:bg-violet hover:text-white cursor-pointer" :class="service_active == 4 ? 'bg-violet text-white' : ''">CONTENT<strong class="font-bold">CREATION</strong></li>
-                                        <li @mouseover="showService(5)" class="hover:bg-violet hover:text-white cursor-pointer" :class="service_active == 5 ? 'bg-violet text-white' : ''">PRODUCTION<strong class="font-bold">SERVICES</strong></li>
-                                        <li @mouseover="showService(6)" class="hover:bg-violet hover:text-white cursor-pointer" :class="service_active == 6 ? 'bg-violet text-white' : ''">MAXIMIZACIÓN<strong class="font-bold">DIGITAL</strong></li>
-                                        <li @mouseover="showService(7)" class="hover:bg-violet hover:text-white cursor-pointer" :class="service_active == 7 ? 'bg-violet text-white' : ''">TALENT&<strong class="font-bold">INFLUENCERS</strong></li>
-                                        <li @mouseover="showService(8)" class="hover:bg-violet hover:text-white cursor-pointer" :class="service_active == 8 ? 'bg-violet text-white' : ''">BRAND<strong class="font-bold">ACTIVATION</strong></li>
+                                        <li @mouseover="showService(1)" class="hover:bg-violet hover:translate-x-6 transition-all hover:text-white cursor-pointer" :class="service_active == 1 ? 'bg-violet text-white' : ''"><strong class="font-bold">CAMPAÑAS</strong></li>
+                                        <li @mouseover="showService(2)" class="hover:bg-violet hover:translate-x-6 transition-all hover:text-white cursor-pointer" :class="service_active == 2 ? 'bg-violet text-white' : ''">SOCIAL<strong class="font-bold">MEDIA</strong></li>
+                                        <li @mouseover="showService(3)" class="hover:bg-violet hover:translate-x-6 transition-all hover:text-white cursor-pointer" :class="service_active == 3 ? 'bg-violet text-white' : ''">INTERNAL<strong class="font-bold">HUBS</strong></li>
+                                        <li @mouseover="showService(4)" class="hover:bg-violet hover:translate-x-6 transition-all hover:text-white cursor-pointer" :class="service_active == 4 ? 'bg-violet text-white' : ''">CONTENT<strong class="font-bold">CREATION</strong></li>
+                                        <li @mouseover="showService(5)" class="hover:bg-violet hover:translate-x-6 transition-all hover:text-white cursor-pointer" :class="service_active == 5 ? 'bg-violet text-white' : ''">PRODUCTION<strong class="font-bold">SERVICES</strong></li>
+                                        <li @mouseover="showService(6)" class="hover:bg-violet hover:translate-x-6 transition-all hover:text-white cursor-pointer" :class="service_active == 6 ? 'bg-violet text-white' : ''">MAXIMIZACIÓN<strong class="font-bold">DIGITAL</strong></li>
+                                        <li @mouseover="showService(7)" class="hover:bg-violet hover:translate-x-6 transition-all hover:text-white cursor-pointer" :class="service_active == 7 ? 'bg-violet text-white' : ''">TALENT&<strong class="font-bold">INFLUENCERS</strong></li>
+                                        <li @mouseover="showService(8)" class="hover:bg-violet hover:translate-x-6 transition-all hover:text-white cursor-pointer" :class="service_active == 8 ? 'bg-violet text-white' : ''">BRAND<strong class="font-bold">ACTIVATION</strong></li>
                                     </ul>
                                 </li>
                                 <li class="text-gray text-5xl">
-                                    <div @click="showPilarServices(2)" class="font-bold hover:bg-violet hover:text-white cursor-pointer">ESTRATEGIA</div>
+                                    <div @click="showPilarServices(2)" class="font-bold hover:bg-violet transition-all hover:text-white cursor-pointer">ESTRATEGIA</div>
                                     <ul v-if="pilar_active == 2" class="pl-10 font-extralight space-y-2">
-                                        <li @mouseover="showService(9)" class="hover:bg-violet hover:text-white cursor-pointer" :class="service_active == 9 ? 'bg-violet text-white' : ''">MEDIA<strong class="font-bold">LAB</strong></li>
-                                        <li @mouseover="showService(10)" class="hover:bg-violet hover:text-white cursor-pointer" :class="service_active == 10 ? 'bg-violet text-white' : ''">DATA<strong class="font-bold">LAB</strong></li>
-                                        <li @mouseover="showService(11)" class="hover:bg-violet hover:text-white cursor-pointer" :class="service_active == 11 ? 'bg-violet text-white' : ''"><strong class="font-bold">SEO</strong></li>
-                                        <li @mouseover="showService(12)" class="hover:bg-violet hover:text-white cursor-pointer" :class="service_active == 12 ? 'bg-violet text-white' : ''"><strong class="font-bold">CRM</strong></li>
-                                        <li @mouseover="showService(13)" class="hover:bg-violet hover:text-white cursor-pointer" :class="service_active == 13 ? 'bg-violet text-white' : ''"><strong class="font-bold">PLANNING</strong></li>
-                                        <li @mouseover="showService(14)" class="hover:bg-violet hover:text-white cursor-pointer" :class="service_active == 14 ? 'bg-violet text-white' : ''"><strong class="font-bold">CONSULTORÍA</strong></li>
-                                        <li @mouseover="showService(15)" class="hover:bg-violet hover:text-white cursor-pointer" :class="service_active == 15 ? 'bg-violet text-white' : ''"><strong class="font-bold">METODOLOGÍAS</strong></li>
+                                        <li @mouseover="showService(9)" class="hover:bg-violet hover:translate-x-6 transition-all hover:text-white cursor-pointer" :class="service_active == 9 ? 'bg-violet text-white' : ''">MEDIA<strong class="font-bold">LAB</strong></li>
+                                        <li @mouseover="showService(10)" class="hover:bg-violet hover:translate-x-6 transition-all hover:text-white cursor-pointer" :class="service_active == 10 ? 'bg-violet text-white' : ''">DATA<strong class="font-bold">LAB</strong></li>
+                                        <li @mouseover="showService(11)" class="hover:bg-violet hover:translate-x-6 transition-all hover:text-white cursor-pointer" :class="service_active == 11 ? 'bg-violet text-white' : ''"><strong class="font-bold">SEO</strong></li>
+                                        <li @mouseover="showService(12)" class="hover:bg-violet hover:translate-x-6 transition-all hover:text-white cursor-pointer" :class="service_active == 12 ? 'bg-violet text-white' : ''"><strong class="font-bold">CRM</strong></li>
+                                        <li @mouseover="showService(13)" class="hover:bg-violet hover:translate-x-6 transition-all hover:text-white cursor-pointer" :class="service_active == 13 ? 'bg-violet text-white' : ''"><strong class="font-bold">PLANNING</strong></li>
+                                        <li @mouseover="showService(14)" class="hover:bg-violet hover:translate-x-6 transition-all hover:text-white cursor-pointer" :class="service_active == 14 ? 'bg-violet text-white' : ''"><strong class="font-bold">CONSULTORÍA</strong></li>
+                                        <li @mouseover="showService(15)" class="hover:bg-violet hover:translate-x-6 transition-all hover:text-white cursor-pointer" :class="service_active == 15 ? 'bg-violet text-white' : ''"><strong class="font-bold">METODOLOGÍAS</strong></li>
                                     </ul>
                                 </li>
                                 <li class="text-gray text-5xl">
-                                    <div @click="showPilarServices(3)" class="font-bold hover:bg-violet hover:text-white cursor-pointer">INNOVACIÓN</div>
+                                    <div @click="showPilarServices(3)" class="font-bold hover:bg-violet transition-all hover:text-white cursor-pointer">INNOVACIÓN</div>
                                     <ul v-if="pilar_active == 3" class="pl-10 font-extralight">
-                                        <li @mouseover="showService(16)" class="hover:bg-violet hover:text-white cursor-pointer" :class="service_active == 16 ? 'bg-violet text-white' : ''"><strong class="font-bold">PHYGITALAB</strong></li>
+                                        <li @mouseover="showService(16)" class="hover:bg-violet hover:translate-x-6 transition-all hover:text-white cursor-pointer" :class="service_active == 16 ? 'bg-violet text-white' : ''"><strong class="font-bold">PHYGITALAB</strong></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -581,44 +586,52 @@
             </div>
 
             <!-- Init Screen 11 Titulo -->
-            <div class="w-full min-h-screen flex flex-col justify-center items-center container-title-clients" >
-                <h2 class="text-8xl font-bold title-clients">CLIENTES</h2>
+            <div class="w-full min-h-screen flex flex-col justify-center items-center container-title-clients" id="section_partners">
+                <h2 class="text-5xl md:text-6xl lg:text-8xl font-bold text-center title-clients">
+                    PARTNERS
+                    <br>
+                    <p class="text-xl md:text-3xl lg:text-4xl font-bold">CONOCE ALGUNOS DE NUESTROS PARTNERS</p>
+                </h2>
             </div>
             <!-- End Screen 11 titulo -->
 
             <!-- End Screen 11 - CLIENTES-->
-            <div class="container-clientes w-[1000%] text-4xl sm:text-8xl leading-[1.7rem] sm:leading-[4.26rem]" id="section_clientes">
+            <div class="container-clientes w-[1000%] text-4xl sm:text-8xl leading-[1.7rem] sm:leading-[4.26rem]">
                 <div class="panel">
                     <div class="container">
                         <div class="">
-                            <h3 class="font-bold text-7xl mb-8">ALIMENTOS</h3>
-                            <div class="grid grid-cols-5 gap-12 w-full max-w-4xl ml-auto">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/alimentos/solero.png" alt="Logo Solero">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/alimentos/lala.png" alt="Logo Lala">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/alimentos/grillers.png" alt="Logo Grillers">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/alimentos/upfield.png" alt="Logo Upfiled">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/alimentos/bafar.png" alt="Logo Bafar">
+                            <h3 class="font-bold text-4xl mb-8 leading-7">
+                                <small class="text-2xl font-light text-violet">CATEGORÍA</small>
+                                <br>
+                                ALIMENTOS
+                            </h3>
+                            <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-12 w-full max-w-4xl ml-auto">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/alimentos/solero.png" alt="Logo Solero">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/alimentos/lala.png" alt="Logo Lala">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/alimentos/grillers.png" alt="Logo Grillers">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/alimentos/upfield.png" alt="Logo Upfiled">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/alimentos/bafar.png" alt="Logo Bafar">
 
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/alimentos/maizena.png" alt="Logo Maizena">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/alimentos/sabori.png" alt="Logo Sabori">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/alimentos/holanda.png" alt="Logo Holanda">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/alimentos/grupo_bafar.png" alt="Logo Grupo Bafar">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/alimentos/muibon.png" alt="Logo Muibon">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/alimentos/maizena.png" alt="Logo Maizena">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/alimentos/sabori.png" alt="Logo Sabori">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/alimentos/holanda.png" alt="Logo Holanda">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/alimentos/grupo_bafar.png" alt="Logo Grupo Bafar">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/alimentos/muibon.png" alt="Logo Muibon">
 
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/alimentos/ben&jerrys.png" alt="Logo Ben & Jerrys">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/alimentos/parma.png" alt="Logo Parma">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/alimentos/cornetto.png" alt="Logo Cornetto">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/alimentos/carrancedo.png" alt="Logo Carrancedo">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/alimentos/iberia.png" alt="Logo Iberia">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/alimentos/ben&jerrys.png" alt="Logo Ben & Jerrys">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/alimentos/parma.png" alt="Logo Parma">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/alimentos/cornetto.png" alt="Logo Cornetto">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/alimentos/carrancedo.png" alt="Logo Carrancedo">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/alimentos/iberia.png" alt="Logo Iberia">
 
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/alimentos/primavera.png" alt="Logo primavera">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/alimentos/chokis.png" alt="Logo Chokis">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/alimentos/pureit.png" alt="Logo Pure it">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/alimentos/butter.png" alt="Logo Butter">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/alimentos/hellmans.png" alt="Logo Hellamns">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/alimentos/primavera.png" alt="Logo primavera">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/alimentos/chokis.png" alt="Logo Chokis">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/alimentos/pureit.png" alt="Logo Pure it">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/alimentos/butter.png" alt="Logo Butter">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/alimentos/hellmans.png" alt="Logo Hellamns">
 
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/alimentos/crackets.png" alt="Logo Crackets">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/alimentos/unilever.png" alt="Logo Unilever">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/alimentos/crackets.png" alt="Logo Crackets">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/alimentos/unilever.png" alt="Logo Unilever">
                             </div>
                         </div>
                     </div>
@@ -626,16 +639,20 @@
                 <div class="panel">
                     <div class="container">
                         <div class="">
-                            <h3 class="font-bold text-7xl mb-8">AUTOMOTRIZ</h3>
-                            <div class="grid grid-cols-5 gap-12 w-full max-w-4xl ml-auto">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/automotriz/jeep.png" alt="Logo Jeep">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/automotriz/alfa_romeo.png" alt="Logo Alfa Romeo">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/automotriz/mopar.png" alt="Logo Mopar">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/automotriz/ram.png" alt="Logo RAM">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/automotriz/fca.png" alt="Logo FCA">
+                            <h3 class="font-bold text-4xl mb-8 leading-7">
+                                <small class="text-2xl font-light text-violet">CATEGORÍA</small>
+                                <br>
+                                AUTOMOTRIZ
+                            </h3>
+                            <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-12 w-full max-w-4xl ml-auto">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/automotriz/jeep.png" alt="Logo Jeep">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/automotriz/alfa_romeo.png" alt="Logo Alfa Romeo">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/automotriz/mopar.png" alt="Logo Mopar">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/automotriz/ram.png" alt="Logo RAM">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/automotriz/fca.png" alt="Logo FCA">
 
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/automotriz/dodge.png" alt="Logo Dodge">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/automotriz/vw.png" alt="Logo VW">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/automotriz/dodge.png" alt="Logo Dodge">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/automotriz/vw.png" alt="Logo VW">
                             </div>
                         </div>
                     </div>
@@ -643,24 +660,28 @@
                 <div class="panel">
                     <div class="container">
                         <div class="">
-                            <h3 class="font-bold text-7xl mb-8">BEBIDAS</h3>
-                            <div class="grid grid-cols-5 gap-12 w-full max-w-4xl ml-auto">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/bebidas/tecate.png" alt="Logo Tecate">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/bebidas/xx.png" alt="Logo XX">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/bebidas/indio.png" alt="Logo Indio">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/bebidas/bohemia.png" alt="Logo Bohemia">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/bebidas/amstel.png" alt="Logo Amstel">
+                            <h3 class="font-bold text-4xl mb-8 leading-7">
+                                <small class="text-2xl font-light text-violet">CATEGORÍA</small>
+                                <br>
+                                BEBIDAS
+                            </h3>
+                            <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-12 w-full max-w-4xl ml-auto">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/bebidas/tecate.png" alt="Logo Tecate">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/bebidas/xx.png" alt="Logo XX">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/bebidas/indio.png" alt="Logo Indio">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/bebidas/bohemia.png" alt="Logo Bohemia">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/bebidas/amstel.png" alt="Logo Amstel">
 
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/bebidas/400_conejos.png" alt="Logo 400 Conejos">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/bebidas/sol.png" alt="Logo Sol">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/bebidas/1800.png" alt="Logo 1800">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/bebidas/azul_centenario.png" alt="Logo Centenario">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/bebidas/dobel.png" alt="Logo Dobel">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/bebidas/400_conejos.png" alt="Logo 400 Conejos">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/bebidas/sol.png" alt="Logo Sol">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/bebidas/1800.png" alt="Logo 1800">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/bebidas/azul_centenario.png" alt="Logo Centenario">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/bebidas/dobel.png" alt="Logo Dobel">
 
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/bebidas/heineken.png" alt="Logo Heineken">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/bebidas/creyente.png" alt="Logo Creyente">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/bebidas/centenario.png" alt="Logo Centenario">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/bebidas/boost.png" alt="Logo Boost">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/bebidas/heineken.png" alt="Logo Heineken">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/bebidas/creyente.png" alt="Logo Creyente">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/bebidas/centenario.png" alt="Logo Centenario">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/bebidas/boost.png" alt="Logo Boost">
                             </div>
                         </div>
                     </div>
@@ -668,13 +689,17 @@
                 <div class="panel">
                     <div class="container">
                         <div class="">
-                            <h3 class="font-bold text-7xl mb-8">ENTRETENIMIENTO</h3>
-                            <div class="grid grid-cols-5 gap-12 w-full max-w-4xl ml-auto">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/entretenimiento/hbo.png" alt="Logo HBO">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/entretenimiento/pantaya.png" alt="Logo PANTAYA">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/entretenimiento/back_door.png" alt="Logo BACK DOOR">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/entretenimiento/claro_video.png" alt="Logo Claro Video">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/entretenimiento/claro_musica.png" alt="Logo Amstel">
+                            <h3 class="font-bold text-4xl mb-8 leading-7">
+                                <small class="text-2xl font-light text-violet">CATEGORÍA</small>
+                                <br>
+                                ENTRETENIMIENTO
+                            </h3>
+                            <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-12 w-full max-w-4xl ml-auto">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/entretenimiento/hbo.png" alt="Logo HBO">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/entretenimiento/pantaya.png" alt="Logo PANTAYA">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/entretenimiento/back_door.png" alt="Logo BACK DOOR">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/entretenimiento/claro_video.png" alt="Logo Claro Video">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/entretenimiento/claro_musica.png" alt="Logo Amstel">
                             </div>
                         </div>
                     </div>
@@ -682,11 +707,15 @@
                 <div class="panel">
                     <div class="container">
                         <div class="">
-                            <h3 class="font-bold text-7xl mb-8">MODA</h3>
-                            <div class="grid grid-cols-5 gap-12 w-full max-w-4xl ml-auto">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/moda/dockers.png" alt="Logo dockers">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/moda/gap.png" alt="Logo PANTAYA">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/moda/sxy_jeans.png" alt="Logo BACK sxy jeans">
+                            <h3 class="font-bold text-4xl mb-8 leading-7">
+                                <small class="text-2xl font-light text-violet">CATEGORÍA</small>
+                                <br>
+                                MODA
+                            </h3>
+                            <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-12 w-full max-w-4xl ml-auto">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/moda/dockers.png" alt="Logo dockers">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/moda/gap.png" alt="Logo PANTAYA">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/moda/sxy_jeans.png" alt="Logo BACK sxy jeans">
                             </div>
                         </div>
                     </div>
@@ -694,36 +723,40 @@
                 <div class="panel">
                     <div class="container">
                         <div class="">
-                            <h3 class="font-bold text-7xl mb-8">PERSONAL CARE <br>+ CPG</h3>
-                            <div class="grid grid-cols-5 gap-12 w-full max-w-4xl ml-auto">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/personal_care/unilever.png" alt="Logo unilever">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/personal_care/stives.png" alt="Logo stives">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/personal_care/mia.png" alt="Logo mia">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/personal_care/regio.png" alt="Logo regio">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/personal_care/axe.png" alt="Logo axe">
+                            <h3 class="font-bold text-4xl mb-8 leading-7">
+                                <small class="text-2xl font-light text-violet">CATEGORÍA</small>
+                                <br>
+                                PERSONAL CARE <br>+ CPG
+                            </h3>
+                            <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-12 w-full max-w-4xl ml-auto">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/unilever.png" alt="Logo unilever">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/stives.png" alt="Logo stives">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/mia.png" alt="Logo mia">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/regio.png" alt="Logo regio">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/axe.png" alt="Logo axe">
 
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/personal_care/zest.png" alt="Logo zest">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/personal_care/camay.png" alt="Logo camay">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/personal_care/dove.png" alt="Logo dove">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/personal_care/baby_dove.png" alt="Logo baby_dove">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/personal_care/dove_men.png" alt="Logo dove_men">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/zest.png" alt="Logo zest">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/camay.png" alt="Logo camay">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/dove.png" alt="Logo dove">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/baby_dove.png" alt="Logo baby_dove">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/dove_men.png" alt="Logo dove_men">
 
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/personal_care/rexona.png" alt="Logo rexona">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/personal_care/sedal.png" alt="Logo sedal">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/personal_care/nexxus.png" alt="Logo nexxus">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/personal_care/ponds.png" alt="Logo ponds">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/personal_care/tresemme.png" alt="Logo tresemme">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/rexona.png" alt="Logo rexona">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/sedal.png" alt="Logo sedal">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/nexxus.png" alt="Logo nexxus">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/ponds.png" alt="Logo ponds">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/tresemme.png" alt="Logo tresemme">
 
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/personal_care/folicure.png" alt="Logo folicure">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/personal_care/mom.png" alt="Logo mom">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/personal_care/bissu.png" alt="Logo bissu">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/personal_care/colgate.png" alt="Logo colgate">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/personal_care/alen.png" alt="Logo alen">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/folicure.png" alt="Logo folicure">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/mom.png" alt="Logo mom">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/bissu.png" alt="Logo bissu">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/colgate.png" alt="Logo colgate">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/alen.png" alt="Logo alen">
 
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/personal_care/cloralex.png" alt="Logo cloralex">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/personal_care/eficaz.png" alt="Logo eficaz">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/personal_care/ensueno.png" alt="Logo ensueno">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/personal_care/flash.png" alt="Logo flash">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/cloralex.png" alt="Logo cloralex">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/eficaz.png" alt="Logo eficaz">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/ensueno.png" alt="Logo ensueno">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/flash.png" alt="Logo flash">
                             </div>
                         </div>
                     </div>
@@ -731,23 +764,27 @@
                 <div class="panel">
                     <div class="container">
                         <div class="">
-                            <h3 class="font-bold text-7xl mb-8">PHARMA</h3>
-                            <div class="grid grid-cols-5 gap-12 w-full max-w-4xl ml-auto">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/pharma/devlyn.png" alt="Logo devlyn">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/pharma/bayer.png" alt="Logo bayer">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/pharma/monange.png" alt="Logo monange">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/pharma/pfiser.png" alt="Logo pfiser">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/pharma/chopo.png" alt="Logo chopo">
+                            <h3 class="font-bold text-4xl mb-8 leading-7">
+                                <small class="text-2xl font-light text-violet">CATEGORÍA</small>
+                                <br>
+                                PHARMA
+                            </h3>
+                            <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-12 w-full max-w-4xl ml-auto">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/pharma/devlyn.png" alt="Logo devlyn">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/pharma/bayer.png" alt="Logo bayer">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/pharma/monange.png" alt="Logo monange">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/pharma/pfiser.png" alt="Logo pfiser">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/pharma/chopo.png" alt="Logo chopo">
 
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/pharma/affective.png" alt="Logo affective">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/pharma/tena.png" alt="Logo tena">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/pharma/nicte.png" alt="Logo nicte">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/pharma/purity.png" alt="Logo purity">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/pharma/san_pablo.png" alt="Logo san_pablo">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/pharma/affective.png" alt="Logo affective">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/pharma/tena.png" alt="Logo tena">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/pharma/nicte.png" alt="Logo nicte">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/pharma/purity.png" alt="Logo purity">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/pharma/san_pablo.png" alt="Logo san_pablo">
 
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/pharma/ifa.png" alt="Logo ifa">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/pharma/bescience.png" alt="Logo bescience">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/pharma/oralia.png" alt="Logo oralia">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/pharma/ifa.png" alt="Logo ifa">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/pharma/bescience.png" alt="Logo bescience">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/pharma/oralia.png" alt="Logo oralia">
                             </div>
                         </div>
                     </div>
@@ -755,16 +792,20 @@
                 <div class="panel">
                     <div class="container">
                         <div class="">
-                            <h3 class="font-bold text-7xl mb-8">RESTAURANTES</h3>
-                            <div class="grid grid-cols-5 gap-12 w-full max-w-4xl ml-auto">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/restaurantes/shake_shack.png" alt="Logo shake_shak">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/restaurantes/el_porton.png" alt="Logo el_porton">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/restaurantes/pf_changs.png" alt="Logo pf_changs">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/restaurantes/italiannis.png" alt="Logo italianis">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/restaurantes/alsea.png" alt="Logo alsea">
+                            <h3 class="font-bold text-4xl mb-8 leading-7">
+                                <small class="text-2xl font-light text-violet">CATEGORÍA</small>
+                                <br>
+                                RESTAURANTES
+                            </h3>
+                            <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-12 w-full max-w-4xl ml-auto">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/restaurantes/shake_shack.png" alt="Logo shake_shak">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/restaurantes/el_porton.png" alt="Logo el_porton">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/restaurantes/pf_changs.png" alt="Logo pf_changs">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/restaurantes/italiannis.png" alt="Logo italianis">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/restaurantes/alsea.png" alt="Logo alsea">
 
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/restaurantes/cheesecake_factory.png" alt="Logo cheesecake">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/restaurantes/california.png" alt="Logo california">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/restaurantes/cheesecake_factory.png" alt="Logo cheesecake">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/restaurantes/california.png" alt="Logo california">
                             </div>
                         </div>
                     </div>
@@ -772,16 +813,20 @@
                 <div class="panel">
                     <div class="container">
                         <div class="">
-                            <h3 class="font-bold text-7xl mb-8">TECH</h3>
-                            <div class="grid grid-cols-5 gap-12 w-full max-w-4xl ml-auto">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/tech/clip.png" alt="Logo clip">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/tech/sony.png" alt="Logo sony">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/tech/pioneer.png" alt="Logo pioneer">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/tech/twitter.png" alt="Logo twitter">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/tech/att.png" alt="Logo att">
+                            <h3 class="font-bold text-4xl mb-8 leading-7">
+                                <small class="text-2xl font-light text-violet">CATEGORÍA</small>
+                                <br>
+                                TECH
+                            </h3>
+                            <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-12 w-full max-w-4xl ml-auto">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/tech/clip.png" alt="Logo clip">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/tech/sony.png" alt="Logo sony">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/tech/pioneer.png" alt="Logo pioneer">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/tech/twitter.png" alt="Logo twitter">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/tech/att.png" alt="Logo att">
 
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/tech/54d.png" alt="Logo 54d">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/tech/glup.png" alt="Logo glup">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/tech/54d.png" alt="Logo 54d">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/tech/glup.png" alt="Logo glup">
                             </div>
                         </div>
                     </div>
@@ -789,12 +834,16 @@
                 <div class="panel">
                     <div class="container">
                         <div class="">
-                            <h3 class="font-bold text-7xl mb-8">OTRAS</h3>
-                            <div class="grid grid-cols-5 gap-12 w-full max-w-4xl ml-auto">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/otras/posadas.png" alt="Logo posadas">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/otras/meridian.png" alt="Logo meridian">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/otras/leona.png" alt="Logo leona">
-                                <img class="w-full h-12 object-contain object-center" src="/assets/images/clientes/otras/debolsillo.png" alt="Logo debolsillo">
+                            <h3 class="font-bold text-4xl mb-8 leading-7">
+                                <small class="text-2xl font-light text-violet">CATEGORÍA</small>
+                                <br>
+                                OTRAS
+                            </h3>
+                            <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-12 w-full max-w-4xl ml-auto">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/otras/posadas.png" alt="Logo posadas">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/otras/meridian.png" alt="Logo meridian">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/otras/leona.png" alt="Logo leona">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/otras/debolsillo.png" alt="Logo debolsillo">
                             </div>
                         </div>
                     </div>
@@ -988,7 +1037,7 @@
 
             // SECREEN TITLE SERVICES
             gsap.fromTo('.title-services', {
-                opacity: 0
+                opacity: 0.2
             },{
                 opacity: 1,
                 ease: "none",
@@ -1004,7 +1053,7 @@
 
             // SECREEN TITLE CLIENTES
             gsap.fromTo('.title-clients', {
-                opacity: 0
+                opacity: 0.2
             },{
                 opacity: 1,
                 ease: "none",
