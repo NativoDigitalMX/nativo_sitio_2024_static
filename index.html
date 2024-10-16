@@ -550,7 +550,7 @@
                             <ul class="space-y-4">
                                 <li class="text-gray text-base md:text-5xl">
                                     <div @click="showPilarServices(1)" class="font-bold hover:bg-violet transition-all hover:text-white cursor-pointer">CREATIVIDAD</div>
-                                    <ul v-if="pilar_active == 1" class="pl-10 font-extralight space-y-2">
+                                    <ul v-if="pilar_active == 1" class="pl-10 font-extralight space-y-2 text-md md:text-4xl">
                                         <li @mouseover="showService(1)" class="hover:bg-violet hover:translate-x-6 transition-all hover:text-white cursor-pointer" :class="service_active == 1 ? 'bg-violet text-white' : ''"><strong class="font-bold">CAMPAÑAS</strong></li>
                                         <li @mouseover="showService(2)" class="hover:bg-violet hover:translate-x-6 transition-all hover:text-white cursor-pointer" :class="service_active == 2 ? 'bg-violet text-white' : ''">SOCIAL<strong class="font-bold">MEDIA</strong></li>
                                         <li @mouseover="showService(3)" class="hover:bg-violet hover:translate-x-6 transition-all hover:text-white cursor-pointer" :class="service_active == 3 ? 'bg-violet text-white' : ''">INTERNAL<strong class="font-bold">HUBS</strong></li>
@@ -563,7 +563,7 @@
                                 </li>
                                 <li class="text-gray text-5xl">
                                     <div @click="showPilarServices(2)" class="font-bold hover:bg-violet transition-all hover:text-white cursor-pointer">ESTRATEGIA</div>
-                                    <ul v-if="pilar_active == 2" class="pl-10 font-extralight space-y-2">
+                                    <ul v-if="pilar_active == 2" class="pl-10 font-extralight space-y-2 text-md md:text-4xl">
                                         <li @mouseover="showService(9)" class="hover:bg-violet hover:translate-x-6 transition-all hover:text-white cursor-pointer" :class="service_active == 9 ? 'bg-violet text-white' : ''">MEDIA<strong class="font-bold">LAB</strong></li>
                                         <li @mouseover="showService(10)" class="hover:bg-violet hover:translate-x-6 transition-all hover:text-white cursor-pointer" :class="service_active == 10 ? 'bg-violet text-white' : ''">DATA<strong class="font-bold">LAB</strong></li>
                                         <li @mouseover="showService(11)" class="hover:bg-violet hover:translate-x-6 transition-all hover:text-white cursor-pointer" :class="service_active == 11 ? 'bg-violet text-white' : ''"><strong class="font-bold">SEO</strong></li>
@@ -575,7 +575,7 @@
                                 </li>
                                 <li class="text-gray text-5xl">
                                     <div @click="showPilarServices(3)" class="font-bold hover:bg-violet transition-all hover:text-white cursor-pointer">INNOVACIÓN</div>
-                                    <ul v-if="pilar_active == 3" class="pl-10 font-extralight">
+                                    <ul v-if="pilar_active == 3" class="pl-10 font-extralight space-y-2 text-md md:text-4xl">
                                         <li @mouseover="showService(16)" class="hover:bg-violet hover:translate-x-6 transition-all hover:text-white cursor-pointer" :class="service_active == 16 ? 'bg-violet text-white' : ''"><strong class="font-bold">PHYGITALAB</strong></li>
                                     </ul>
                                 </li>
@@ -586,11 +586,9 @@
             </div>
 
             <!-- Init Screen 11 Titulo -->
-            <div class="w-full min-h-screen flex flex-col justify-center items-center container-title-clients" id="section_partners">
-                <h2 class="text-5xl md:text-6xl lg:text-8xl font-bold text-center title-clients">
-                    PARTNERS
-                    <br>
-                    <p class="text-xl md:text-3xl lg:text-4xl font-bold">CONOCE ALGUNOS DE NUESTROS PARTNERS</p>
+            <div class="w-full min-h-screen flex flex-col justify-center items-center container-title-clients px-8" id="section_partners">
+                <h2 class="text-3xl md:text-4xl lg:text-6xl font-bold text-center title-clients">
+                    CONOCE ALGUNOS DE NUESTROS PARTNERS
                 </h2>
             </div>
             <!-- End Screen 11 titulo -->
@@ -1037,7 +1035,7 @@
 
             // SECREEN TITLE SERVICES
             gsap.fromTo('.title-services', {
-                opacity: 0.2
+                opacity: 0.5
             },{
                 opacity: 1,
                 ease: "none",
@@ -1053,7 +1051,7 @@
 
             // SECREEN TITLE CLIENTES
             gsap.fromTo('.title-clients', {
-                opacity: 0.2
+                opacity: 0.5
             },{
                 opacity: 1,
                 ease: "none",
