@@ -8,6 +8,10 @@
     <title>NATIVO</title>
     <meta name="description" content="INNOVAMOS CON CREATIVIDAD LIBRE Y VALIENTE.">
 
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
@@ -25,7 +29,8 @@
                     },
                     colors: {
                         violet: "#AC35F6",
-                        green: "#00FF00"
+                        green: "#00FF00",
+                        gray: "#CCCCCC"
                     },
                     fontFamily: {
                         sans: ["Prompt", "sans-serif"],
@@ -46,381 +51,854 @@
     </script>
 
     <link rel="stylesheet" href="assets/app.css">
+    
 </head>
 <body>
 
-    <header class="fixed w-full z-10 bg-black z-20">
-        <div class="container h-16 flex justify-between items-center">
-            <a href="" class="">
-                <img src="assets/images/logo_nativo.webp"
-                     class="w-40"
-                     alt=""
-                >
-            </a>
-            <nav>
-                <button id="section1Btn" class="px-4 py-1 text-green border-2 border-green rounded-full hover:bg-green hover:text-black">Hablemos</button>
-            </nav>
-        </div>
-    </header>
-    <!-- End Header Section -->
-
-    <main class="">
-
-        <!-- Init Screen 1 -->
-        <div class="w-full min-h-screen flex flex-col justify-center items-center container-screen1">
-            <img src="https://nativo-sitio-2024-static.s3.amazonaws.com/assets/images/nativo_torus.gif"
-                 class="w-10/12 sm:w-1/2 max-w-[30rem] mx-auto screen1-torus"
-                 alt="Nativo"
-            >
-        </div>
-        <!-- End Screen 1 -->
-
-        <!-- Init Screen 2 - NAV HORIZONTAL -->
-        <div class="container-screen2 w-[400%] text-4xl sm:text-8xl leading-[1.7rem] sm:leading-[4.26rem]">
-            <div class="panel">
-                <div class="relative font-bold max-w-[320px] sm:max-w-none text-[4rem] leading-[2.8rem] sm:text-[10rem] sm:leading-[7rem] screen2-text1">
-                    <span class="inline-block translate-x-3">SOMOS</span>
-                    <br>
-                    NATIVO
-
-                    <div class="w-12 h-12 sm:w-16 sm:h-16 bg-violet rounded-full flex justify-center items-center absolute -right-0 -bottom-14 sm:-right-16 sm:-bottom-8">
-                        <svg class="w-4 h-4" viewBox="0 0 23 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M22.7148 9.51562C22.7148 9.9375 22.5625 10.2969 22.2578 10.5938L14.5586 18.2695C14.2539 18.5742 13.9141 18.7266 13.5391 18.7266C13.1094 18.7266 12.7617 18.5938 12.4961 18.3281C12.2305 18.0625 12.0977 17.7344 12.0977 17.3438C12.0977 17.125 12.1367 16.9297 12.2148 16.7578C12.3008 16.5859 12.4102 16.4336 12.543 16.3008L15.168 13.6523L19.3281 9.85547L19.8672 10.7344L15.6016 10.9805H1.77344C1.32812 10.9805 0.96875 10.8477 0.695312 10.582C0.421875 10.3086 0.285156 9.95312 0.285156 9.51562C0.285156 9.08594 0.421875 8.73828 0.695312 8.47266C0.96875 8.19922 1.32812 8.0625 1.77344 8.0625H15.6016L19.8672 8.29688L19.3281 9.19922L15.168 5.37891L12.543 2.73047C12.4102 2.59766 12.3008 2.44531 12.2148 2.27344C12.1367 2.09375 12.0977 1.89844 12.0977 1.6875C12.0977 1.29688 12.2305 0.96875 12.4961 0.703125C12.7617 0.4375 13.1094 0.304688 13.5391 0.304688C13.7188 0.304688 13.8945 0.34375 14.0664 0.421875C14.2461 0.492188 14.418 0.609375 14.582 0.773438L22.2578 8.4375C22.5625 8.73438 22.7148 9.09375 22.7148 9.51562Z" fill="white"/>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-            <div class="panel">
-                <div class="relative font-bold max-w-[320px] sm:max-w-none ">
-                    INNOVAMOS CON
-                    <br>
-                    CREATIVIDAD
-                    <br>
-                    <span class="text-violet">LIBRE Y VALIENTE.</span>
-
-                    <div class="w-12 h-12 sm:w-16 sm:h-16 border border-violet rounded-full flex justify-center items-center absolute -right-0 -bottom-14 sm:-right-16 sm:-bottom-8">
-                        <svg class="w-4 h-4" viewBox="0 0 23 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M22.7148 9.51562C22.7148 9.9375 22.5625 10.2969 22.2578 10.5938L14.5586 18.2695C14.2539 18.5742 13.9141 18.7266 13.5391 18.7266C13.1094 18.7266 12.7617 18.5938 12.4961 18.3281C12.2305 18.0625 12.0977 17.7344 12.0977 17.3438C12.0977 17.125 12.1367 16.9297 12.2148 16.7578C12.3008 16.5859 12.4102 16.4336 12.543 16.3008L15.168 13.6523L19.3281 9.85547L19.8672 10.7344L15.6016 10.9805H1.77344C1.32812 10.9805 0.96875 10.8477 0.695312 10.582C0.421875 10.3086 0.285156 9.95312 0.285156 9.51562C0.285156 9.08594 0.421875 8.73828 0.695312 8.47266C0.96875 8.19922 1.32812 8.0625 1.77344 8.0625H15.6016L19.8672 8.29688L19.3281 9.19922L15.168 5.37891L12.543 2.73047C12.4102 2.59766 12.3008 2.44531 12.2148 2.27344C12.1367 2.09375 12.0977 1.89844 12.0977 1.6875C12.0977 1.29688 12.2305 0.96875 12.4961 0.703125C12.7617 0.4375 13.1094 0.304688 13.5391 0.304688C13.7188 0.304688 13.8945 0.34375 14.0664 0.421875C14.2461 0.492188 14.418 0.609375 14.582 0.773438L22.2578 8.4375C22.5625 8.73438 22.7148 9.09375 22.7148 9.51562Z" fill="white"/>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-            <div class="panel">
-                <div class="relative font-bold max-w-[320px] sm:max-w-none ">
-                    CREAMOS
-                    <br>
-                    CONEXIONES
-                    <br>
-                    <span class="text-violet">REALES</span> ENTRE
-                    <br>
-                    PERSONAS
-                    <br>
-                    <span class="text-violet">DIVERSAS</span>
-
-                    <div class="w-12 h-12 sm:w-16 sm:h-16 border border-violet rounded-full flex justify-center items-center absolute -right-0 -bottom-14 sm:-right-16 sm:-bottom-8">
-                        <svg class="w-4 h-4" viewBox="0 0 23 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M22.7148 9.51562C22.7148 9.9375 22.5625 10.2969 22.2578 10.5938L14.5586 18.2695C14.2539 18.5742 13.9141 18.7266 13.5391 18.7266C13.1094 18.7266 12.7617 18.5938 12.4961 18.3281C12.2305 18.0625 12.0977 17.7344 12.0977 17.3438C12.0977 17.125 12.1367 16.9297 12.2148 16.7578C12.3008 16.5859 12.4102 16.4336 12.543 16.3008L15.168 13.6523L19.3281 9.85547L19.8672 10.7344L15.6016 10.9805H1.77344C1.32812 10.9805 0.96875 10.8477 0.695312 10.582C0.421875 10.3086 0.285156 9.95312 0.285156 9.51562C0.285156 9.08594 0.421875 8.73828 0.695312 8.47266C0.96875 8.19922 1.32812 8.0625 1.77344 8.0625H15.6016L19.8672 8.29688L19.3281 9.19922L15.168 5.37891L12.543 2.73047C12.4102 2.59766 12.3008 2.44531 12.2148 2.27344C12.1367 2.09375 12.0977 1.89844 12.0977 1.6875C12.0977 1.29688 12.2305 0.96875 12.4961 0.703125C12.7617 0.4375 13.1094 0.304688 13.5391 0.304688C13.7188 0.304688 13.8945 0.34375 14.0664 0.421875C14.2461 0.492188 14.418 0.609375 14.582 0.773438L22.2578 8.4375C22.5625 8.73438 22.7148 9.09375 22.7148 9.51562Z" fill="white"/>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-            <div class="panel">
-                <div class="relative font-bold max-w-[320px] sm:max-w-none ">
-                    PARA TRASCENDER,
-                    <br>
-                    ES NECESARIO
-                    <br>
-                    <span class="text-violet">TRANSFORMAR</span>
-
-                    <div class="w-12 h-12 sm:w-16 sm:h-16 border border-violet rounded-full flex justify-center items-center absolute -right-0 -bottom-14 sm:-right-16 sm:-bottom-8">
-                        <svg class="w-4 h-4" viewBox="0 0 23 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M22.7148 9.51562C22.7148 9.9375 22.5625 10.2969 22.2578 10.5938L14.5586 18.2695C14.2539 18.5742 13.9141 18.7266 13.5391 18.7266C13.1094 18.7266 12.7617 18.5938 12.4961 18.3281C12.2305 18.0625 12.0977 17.7344 12.0977 17.3438C12.0977 17.125 12.1367 16.9297 12.2148 16.7578C12.3008 16.5859 12.4102 16.4336 12.543 16.3008L15.168 13.6523L19.3281 9.85547L19.8672 10.7344L15.6016 10.9805H1.77344C1.32812 10.9805 0.96875 10.8477 0.695312 10.582C0.421875 10.3086 0.285156 9.95312 0.285156 9.51562C0.285156 9.08594 0.421875 8.73828 0.695312 8.47266C0.96875 8.19922 1.32812 8.0625 1.77344 8.0625H15.6016L19.8672 8.29688L19.3281 9.19922L15.168 5.37891L12.543 2.73047C12.4102 2.59766 12.3008 2.44531 12.2148 2.27344C12.1367 2.09375 12.0977 1.89844 12.0977 1.6875C12.0977 1.29688 12.2305 0.96875 12.4961 0.703125C12.7617 0.4375 13.1094 0.304688 13.5391 0.304688C13.7188 0.304688 13.8945 0.34375 14.0664 0.421875C14.2461 0.492188 14.418 0.609375 14.582 0.773438L22.2578 8.4375C22.5625 8.73438 22.7148 9.09375 22.7148 9.51562Z" fill="white"/>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Screen 2 - NAV HORIZONTAL-->
-
-        <!-- Init Screen 3 - VIDEO REEL -->
-        <div class="w-full sm:min-h-screen flex flex-col justify-center items-center container-screen3">
-            <video class="videoItem w-screen h-auto sm:h-screen object-contain object-center sm:px-8 mx-auto screen3-videoItem" autoplay muted loop>
-                <source src="https://nativo-sitio-2024-static.s3.amazonaws.com/assets/images/reel_nativo.mp4" type="video/mp4">
-            </video>
-        </div>
-        <!-- End Screen 3 -->
-
-        <!-- Init Screen 4 - NUESTRO PROPOSITO -->
-        <div class="w-full flex flex-col justify-center items-center mt-20 sm:mt-40 container-screen4">
-            <div class="w-full overflow-hidden pb-16">
-                <div class="textItem inline-block text-white box font-bold text-[5rem] sm:text-[8rem] whitespace-nowrap" id="screen4-textItem">
-                    NUESTRO PROPÓSITO
-                </div>
-            </div>
-        </div>
-        <!-- End Screen 4 -->
-
-        <!-- Init Screen 5 - HUMAN -->
-        <div class="w-full flex justify-center items-center container-screen5">
-            <div class="w-1/2">
-                <img src="assets/images/asteric.png"
-                     class="w-20 mx-auto screen4-human"
-                     alt="Nativo uyman"
-                >
-            </div>
-            <div class="w-1/2">
-                <img src="https://nativo-sitio-2024-static.s3.amazonaws.com/assets/images/human.gif"
-                     class="w-full max-w-[30rem] screen4-human"
-                     alt="Nativo uyman"
-                >
-            </div>
-        </div>
-        <!-- End Screen 5 -->
-
-        <!-- Init Screen 6 - TEXT LIDERAR -->
-        <div class="w-full pt-40 sm:pt-0 sm:min-h-screen flex flex-col justify-center items-center container-screen6">
-            <div class="relative text-white font-bold text-[2.2rem] leading-[1.7rem] sm:text-[6rem] sm:leading-[4.3rem]" id="screen6-textContent">
-                <img src="assets/images/open_quotes.png" class="absolute w-20 sm:w-28 -top-16 sm:-top-28 left-0" alt="Quote">
-                <span>LIDERAR LA</span>
-                <br>
-                <span>TRANSFORMACIÓN</span>
-                <br>
-                <span class="text-violet">CREATIVA</span> DE LA
-                <br>
-                <span class="text-[4rem] leading-[2.8rem] sm:text-[12rem] sm:leading-[8.5rem]">INDUSTRIA</span>
-
-                <img src="assets/images/close_quotes.png" class="absolute w-20 sm:w-28 -bottom-16 sm:-bottom-28 right-0" alt="Quote">
-            </div>
-        </div>
-        <!-- End Screen 6 -->
-
-        <!-- Init Screen 8 - NAV HORIZONTAL NATIVO NÚMEROS -->
-        <div class="relative w-full min-h-screen flex flex-col justify-center items-center container-screen8">
-            <div class="bg-grid bg-no-repeat bg-cover absolute top-0 left-0 w-screen h-screen screen8-bg-grid"></div>
-            <div class="w-full overflow-hidden">
-                <div class="textItem inline-block align-middle text-white box font-bold text-[4rem] sm:text-[6rem] whitespace-nowrap space-x-8 py-16" id="screen8-textItem">
-
-                    <div class="inline-block align-middle w-screen text-[3.6rem] sm:text-[8rem] leading-[2.8rem] sm:leading-[6rem] text-center screen8-text1">
-                        NATIVO EN
-                        <br>
-                        <span class="text-[4rem] sm:text-[9rem]">NÚMEROS</span>
-                    </div>
-                    <div class="inline-block align-middle screen8-text1 pl-32">
-                        TENEMOS <span class="text-violet">12 AÑOS</span> EXISTIENDO
-                    </div>
-                    <img src="https://nativo-sitio-2024-static.s3.amazonaws.com/assets/images/nativo_noise.gif"
-                         class="inline-block w-60 sm:w-96"
-                         alt="Nativo noise"
+    <div id="app">
+        <header class="fixed w-full z-10 bg-black z-20">
+            <div class="container h-16 flex justify-between items-center">
+                <a href="" class="">
+                    <img src="assets/images/logo_nativo.webp"
+                         class="w-40"
+                         alt=""
                     >
-                    <div class="inline-block">
-                        HEMOS COLABORADO CON MÁS DE
-                    </div>
-                    <div class="relative inline-block align-middle text-violet text-[6rem] sm:text-[9rem] pb-6">
-                        200 MARCAS
-                        <span class="absolute bottom-6 right-0 text-white text-[1.5rem] sm:text-[2rem]">* A LO LARGO DE LA HISTORIA</span>
-                    </div>
-                    <div class="inline-block align-middle">
-                        <svg class="inline-block w-16 h-16" viewBox="0 0 63 87" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M51.85 87L0.400001 43.8L52.15 0.599994L62.5 12.6L24.55 43.65L62.5 74.7L51.85 87Z" fill="white"/>
-                        </svg>
-                        <div class="inline-block relative align-middle">
-                            <video class="w-[32rem] sm:w-[42rem] px-16" autoplay muted loop>
-                                <source src="https://nativo-sitio-2024-static.s3.amazonaws.com/assets/images/reel_phone.mp4" type="video/mp4">
-                            </video>
-                            <img src="assets/images/phone.png"
-                                class="inline-block w-[30rem] sm:w-[40rem] absolute -top-4 left-4"
-                                alt="Nativo noise"
-                            >
-                            <span class="absolute -bottom-20 left-0 w-full text-center text-[2.5rem]">EN 40 <span class="text-violet">PAÍSES</span></span>
+                </a>
+                <nav class="flex justify-end items-center gap-8">
+                    <button data-link="inicio" class="link">Inicio</button>
+                    <button data-link="servicios" class="link">Servicios</button>
+                    <button data-link="partners" class="link">Partners</button>
+                    <button data-link="hablemos" class="link px-4 py-1 text-green border-2 border-green rounded-full hover:bg-green hover:text-black">Hablemos</button>
+                </nav>
+            </div>
+        </header>
+        <!-- End Header Section -->
+
+        <main class="" id="section_inicio">
+
+            <!-- Init Screen 1 -->
+            <div class="w-full min-h-screen flex flex-col justify-center items-center container-screen1">
+                <img src="https://nativo-sitio-2024-static.s3.amazonaws.com/assets/images/nativo_torus.gif"
+                     class="w-10/12 sm:w-1/2 max-w-[30rem] mx-auto screen1-torus"
+                     alt="Nativo"
+                >
+            </div>
+            <!-- End Screen 1 -->
+
+            <!-- Init Screen 2 - NAV HORIZONTAL -->
+            <div class="container-screen2 w-[400%] text-4xl sm:text-8xl leading-[1.7rem] sm:leading-[4.26rem]">
+                <div class="panel">
+                    <div class="relative font-bold max-w-[320px] sm:max-w-none text-[4rem] leading-[2.8rem] sm:text-[10rem] sm:leading-[7rem] screen2-text1">
+                        <span class="inline-block translate-x-3">SOMOS</span>
+                        <br>
+                        NATIVO
+
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 bg-violet rounded-full flex justify-center items-center absolute -right-0 -bottom-14 sm:-right-16 sm:-bottom-8">
+                            <svg class="w-4 h-4" viewBox="0 0 23 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22.7148 9.51562C22.7148 9.9375 22.5625 10.2969 22.2578 10.5938L14.5586 18.2695C14.2539 18.5742 13.9141 18.7266 13.5391 18.7266C13.1094 18.7266 12.7617 18.5938 12.4961 18.3281C12.2305 18.0625 12.0977 17.7344 12.0977 17.3438C12.0977 17.125 12.1367 16.9297 12.2148 16.7578C12.3008 16.5859 12.4102 16.4336 12.543 16.3008L15.168 13.6523L19.3281 9.85547L19.8672 10.7344L15.6016 10.9805H1.77344C1.32812 10.9805 0.96875 10.8477 0.695312 10.582C0.421875 10.3086 0.285156 9.95312 0.285156 9.51562C0.285156 9.08594 0.421875 8.73828 0.695312 8.47266C0.96875 8.19922 1.32812 8.0625 1.77344 8.0625H15.6016L19.8672 8.29688L19.3281 9.19922L15.168 5.37891L12.543 2.73047C12.4102 2.59766 12.3008 2.44531 12.2148 2.27344C12.1367 2.09375 12.0977 1.89844 12.0977 1.6875C12.0977 1.29688 12.2305 0.96875 12.4961 0.703125C12.7617 0.4375 13.1094 0.304688 13.5391 0.304688C13.7188 0.304688 13.8945 0.34375 14.0664 0.421875C14.2461 0.492188 14.418 0.609375 14.582 0.773438L22.2578 8.4375C22.5625 8.73438 22.7148 9.09375 22.7148 9.51562Z" fill="white"/>
+                            </svg>
                         </div>
-                        <svg class="inline-block align-middle w-16 h-16" viewBox="0 0 63 87" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M11.1793 0.599994L62.6293 43.8L10.8793 87L0.529298 75L38.4793 43.95L0.529298 12.9L11.1793 0.599994Z" fill="white"/>
-                        </svg>
-                            
                     </div>
-                    <div class="inline-block">
-                        EN <span class="text-violet">IDIOMAS</span> DISTINTOS.
+                </div>
+                <div class="panel">
+                    <div class="relative font-bold max-w-[320px] sm:max-w-none ">
+                        INNOVAMOS CON
+                        <br>
+                        CREATIVIDAD
+                        <br>
+                        <span class="text-violet">LIBRE Y VALIENTE.</span>
+
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 border border-violet rounded-full flex justify-center items-center absolute -right-0 -bottom-14 sm:-right-16 sm:-bottom-8">
+                            <svg class="w-4 h-4" viewBox="0 0 23 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22.7148 9.51562C22.7148 9.9375 22.5625 10.2969 22.2578 10.5938L14.5586 18.2695C14.2539 18.5742 13.9141 18.7266 13.5391 18.7266C13.1094 18.7266 12.7617 18.5938 12.4961 18.3281C12.2305 18.0625 12.0977 17.7344 12.0977 17.3438C12.0977 17.125 12.1367 16.9297 12.2148 16.7578C12.3008 16.5859 12.4102 16.4336 12.543 16.3008L15.168 13.6523L19.3281 9.85547L19.8672 10.7344L15.6016 10.9805H1.77344C1.32812 10.9805 0.96875 10.8477 0.695312 10.582C0.421875 10.3086 0.285156 9.95312 0.285156 9.51562C0.285156 9.08594 0.421875 8.73828 0.695312 8.47266C0.96875 8.19922 1.32812 8.0625 1.77344 8.0625H15.6016L19.8672 8.29688L19.3281 9.19922L15.168 5.37891L12.543 2.73047C12.4102 2.59766 12.3008 2.44531 12.2148 2.27344C12.1367 2.09375 12.0977 1.89844 12.0977 1.6875C12.0977 1.29688 12.2305 0.96875 12.4961 0.703125C12.7617 0.4375 13.1094 0.304688 13.5391 0.304688C13.7188 0.304688 13.8945 0.34375 14.0664 0.421875C14.2461 0.492188 14.418 0.609375 14.582 0.773438L22.2578 8.4375C22.5625 8.73438 22.7148 9.09375 22.7148 9.51562Z" fill="white"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="relative font-bold max-w-[320px] sm:max-w-none ">
+                        CREAMOS
+                        <br>
+                        CONEXIONES
+                        <br>
+                        <span class="text-violet">REALES</span> ENTRE
+                        <br>
+                        PERSONAS
+                        <br>
+                        <span class="text-violet">DIVERSAS</span>
+
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 border border-violet rounded-full flex justify-center items-center absolute -right-0 -bottom-14 sm:-right-16 sm:-bottom-8">
+                            <svg class="w-4 h-4" viewBox="0 0 23 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22.7148 9.51562C22.7148 9.9375 22.5625 10.2969 22.2578 10.5938L14.5586 18.2695C14.2539 18.5742 13.9141 18.7266 13.5391 18.7266C13.1094 18.7266 12.7617 18.5938 12.4961 18.3281C12.2305 18.0625 12.0977 17.7344 12.0977 17.3438C12.0977 17.125 12.1367 16.9297 12.2148 16.7578C12.3008 16.5859 12.4102 16.4336 12.543 16.3008L15.168 13.6523L19.3281 9.85547L19.8672 10.7344L15.6016 10.9805H1.77344C1.32812 10.9805 0.96875 10.8477 0.695312 10.582C0.421875 10.3086 0.285156 9.95312 0.285156 9.51562C0.285156 9.08594 0.421875 8.73828 0.695312 8.47266C0.96875 8.19922 1.32812 8.0625 1.77344 8.0625H15.6016L19.8672 8.29688L19.3281 9.19922L15.168 5.37891L12.543 2.73047C12.4102 2.59766 12.3008 2.44531 12.2148 2.27344C12.1367 2.09375 12.0977 1.89844 12.0977 1.6875C12.0977 1.29688 12.2305 0.96875 12.4961 0.703125C12.7617 0.4375 13.1094 0.304688 13.5391 0.304688C13.7188 0.304688 13.8945 0.34375 14.0664 0.421875C14.2461 0.492188 14.418 0.609375 14.582 0.773438L22.2578 8.4375C22.5625 8.73438 22.7148 9.09375 22.7148 9.51562Z" fill="white"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="relative font-bold max-w-[320px] sm:max-w-none ">
+                        PARA TRASCENDER,
+                        <br>
+                        ES NECESARIO
+                        <br>
+                        <span class="text-violet">TRANSFORMAR</span>
+
+                        <div class="w-12 h-12 sm:w-16 sm:h-16 border border-violet rounded-full flex justify-center items-center absolute -right-0 -bottom-14 sm:-right-16 sm:-bottom-8">
+                            <svg class="w-4 h-4" viewBox="0 0 23 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22.7148 9.51562C22.7148 9.9375 22.5625 10.2969 22.2578 10.5938L14.5586 18.2695C14.2539 18.5742 13.9141 18.7266 13.5391 18.7266C13.1094 18.7266 12.7617 18.5938 12.4961 18.3281C12.2305 18.0625 12.0977 17.7344 12.0977 17.3438C12.0977 17.125 12.1367 16.9297 12.2148 16.7578C12.3008 16.5859 12.4102 16.4336 12.543 16.3008L15.168 13.6523L19.3281 9.85547L19.8672 10.7344L15.6016 10.9805H1.77344C1.32812 10.9805 0.96875 10.8477 0.695312 10.582C0.421875 10.3086 0.285156 9.95312 0.285156 9.51562C0.285156 9.08594 0.421875 8.73828 0.695312 8.47266C0.96875 8.19922 1.32812 8.0625 1.77344 8.0625H15.6016L19.8672 8.29688L19.3281 9.19922L15.168 5.37891L12.543 2.73047C12.4102 2.59766 12.3008 2.44531 12.2148 2.27344C12.1367 2.09375 12.0977 1.89844 12.0977 1.6875C12.0977 1.29688 12.2305 0.96875 12.4961 0.703125C12.7617 0.4375 13.1094 0.304688 13.5391 0.304688C13.7188 0.304688 13.8945 0.34375 14.0664 0.421875C14.2461 0.492188 14.418 0.609375 14.582 0.773438L22.2578 8.4375C22.5625 8.73438 22.7148 9.09375 22.7148 9.51562Z" fill="white"/>
+                            </svg>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- End Screen 8 - NAV HORIZONTAL-->
+            <!-- End Screen 2 - NAV HORIZONTAL-->
 
-
-
-        <!-- Init Screen 9 - ESENCIA QUE NOS DEFINE -->
-        <div class="w-full container-screen9">
-            <!-- MAIN -->
-            <section class="w-full min-h-screen flex justify-center items-center pt-16 first">
-                <div class="relative w-[40vh] h-[40vh] sm:w-[50vh] sm:h-[50vh] flex justify-center items-center">
-                    <img src="https://nativo-sitio-2024-static.s3.amazonaws.com/assets/images/circle.gif"
-                         class="w-[40vh] h-[40vh] sm:w-[50vh] sm:h-[50vh] object-contain screen10-circle absolute top-0 left-0"
-                         alt="Nativo"
-                    >
-                    <div class="absolute min-w-[9rem] -top-[10.5rem] sm:-top-[13rem] z-10">
-                        <img src="/assets/images/icon_estrategia.png"
-                             class="w-28 sm:w-40 mx-auto"
-                             alt="Nativo - Estrategia"
-                        >
-                        <h3 class="text-center font-bold text-base sm:text-xl">ESTRATEGIA</h3>
-                        <p class="text-violet font-red text-center leading-5">
-                            Conexiones reales.
-                            <br>
-                            Personas diversas
-                        </p>
-                    </div>
-                    <div class="absolute min-w-[9rem] -bottom-[9rem] -left-[2rem] sm:-bottom-[2rem] sm:-left-[7rem] z-10">
-                        <img src="/assets/images/icon_creatividad.png"
-                             class="w-28 sm:w-40 mx-auto"
-                             alt="Nativo - Estrategia"
-                        >
-                        <h3 class="text-center font-bold text-base sm:text-xl">CREATIVIDAD</h3>
-                        <p class="text-violet font-red text-center leading-5">
-                            Creatividad
-                            <br>
-                            libre y valiente.
-                        </p>
-                    </div>
-                    <div class="absolute min-w-[9rem] -bottom-[9rem] -right-[3rem] sm:-bottom-[2rem] sm:-right-[7.5rem] z-10">
-                        <img src="/assets/images/icon_innovacion.png"
-                             class="w-28 sm:w-40 mx-auto"
-                             alt="Nativo - Estrategia"
-                        >
-                        <h3 class="text-center font-bold text-base sm:text-xl">INNOVACIÓN</h3>
-                        <p class="text-violet font-red text-center leading-5">
-                            Para trascender,
-                            <br>
-                            es necesario transformar.
-                        </p>
-                    </div>
-                    <div class="font-bold text-[1.9rem] leading-[1.4rem] sm:text-[3rem] sm:leading-[2.2rem] z-10 absolute screen9-text1">
-                        LA ESENCIA
-                        <br>
-                        QUE NOS
-                        <br>
-                        DEFINE
-                    </div>
-                </div>
-            </section>
-
-            <!-- ESTRATEGIA -->
-            <section class="w-full min-h-screen flex justify-center items-center pt-16 screen9-estrategia z-10 page">
-                <div class="relative w-[40vh] h-[40vh] sm:w-[50vh] sm:h-[50vh] flex justify-center items-center">
-                    <img src="https://nativo-sitio-2024-static.s3.amazonaws.com/assets/images/circle.gif"
-                         class="w-[40vh] h-[40vh] sm:w-[50vh] sm:h-[50vh] object-contain screen10-circle absolute top-0 left-0"
-                         alt="Nativo"
-                    >
-                    <div class="absolute min-w-[9rem] -top-[10.5rem] sm:-top-[13rem] z-10">
-                        <img src="/assets/images/icon_estrategia.png"
-                             class="w-28 sm:w-40 mx-auto"
-                             alt="Nativo - Estrategia"
-                        >
-                        <h3 class="text-center font-bold text-base sm:text-xl">ESTRATEGIA</h3>
-                        <p class="text-violet font-red text-center leading-5">
-                            Conexiones reales.
-                            <br>
-                            Personas diversas
-                        </p>
-                    </div>
-                    <div class="text-[1.9rem] leading-[1.4rem] sm:text-[3rem] sm:leading-[2.2rem] z-10 absolute px-10 screen9-text1">
-                        <ul class="font-red list-disc pl-12 text-xs sm:text-base">
-                            <li>Planning</li>
-                            <li>Consultoría estratégica.</li>
-                            <li>Medialab. </li>
-                            <li>Datalab.</li>
-                            <li>CRM inbound marketing.</li>
-                            <li>SEO 360.</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- CREATIVIDAD -->
-            <section class="w-full min-h-screen flex justify-center items-center pt-16 screen9-estrategia z-10 page">
-                <div class="relative w-[40vh] h-[40vh] sm:w-[50vh] sm:h-[50vh] flex justify-center items-center">
-                    <img src="https://nativo-sitio-2024-static.s3.amazonaws.com/assets/images/circle.gif"
-                         class="w-[40vh] h-[40vh] sm:w-[50vh] sm:h-[50vh] object-contain screen10-circle absolute top-0 left-0"
-                         alt="Nativo"
-                    >
-                    <div class="absolute min-w-[9rem] -bottom-[9rem] -left-[2rem] sm:-bottom-[2rem] sm:-left-[7rem] z-10">
-                        <img src="/assets/images/icon_creatividad.png"
-                             class="w-28 sm:w-40 mx-auto"
-                             alt="Nativo - Estrategia"
-                        >
-                        <h3 class="text-center font-bold text-base sm:text-xl">CREATIVIDAD</h3>
-                        <p class="text-violet font-red text-center leading-5">
-                            Creatividad
-                            <br>
-                            libre y valiente.
-                        </p>
-                    </div>
-                    <div class="text-[1.9rem] leading-[1.4rem] sm:text-[3rem] sm:leading-[2.2rem] z-10 absolute px-10 screen9-text1">
-                        <ul class="font-red list-disc pl-12 text-xs sm:text-base">
-                            <li>Creatividad / Campañas</li>
-                            <li>Social media. </li>
-                            <li>Internal Hubs.</li>
-                            <li>Content creation.</li>
-                            <li>Talent & IM: </li>
-                            <li>Events & brand activations.</li>
-                            <li>Production services</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- INNOVACION -->
-            <section class="w-full min-h-screen flex justify-center items-center pt-16 screen9-estrategia z-10 page">
-                <div class="relative w-[40vh] h-[40vh] sm:w-[50vh] sm:h-[50vh] flex justify-center items-center">
-                    <img src="https://nativo-sitio-2024-static.s3.amazonaws.com/assets/images/circle.gif"
-                         class="w-[40vh] h-[40vh] sm:w-[50vh] sm:h-[50vh] object-contain screen10-circle absolute top-0 left-0"
-                         alt="Nativo"
-                    >
-                    <div class="absolute min-w-[9rem] -bottom-[9rem] -right-[3rem] sm:-bottom-[2rem] sm:-right-[7.5rem] z-10">
-                        <img src="/assets/images/icon_innovacion.png"
-                             class="w-28 sm:w-40 mx-auto"
-                             alt="Nativo - Estrategia"
-                        >
-                        <h3 class="text-center font-bold text-base sm:text-xl">INNOVACIÓN</h3>
-                        <p class="text-violet font-red text-center leading-5">
-                            Para trascender,
-                            <br>
-                            es necesario transformar.
-                        </p>
-                    </div>
-                    <div class="text-[1.9rem] leading-[1.4rem] sm:text-[3rem] sm:leading-[2.2rem] z-10 absolute px-10 screen9-text1">
-                        <ul class="font-red list-disc pl-12 text-xs sm:text-base">
-                            <li>Apps & Web.</li>
-                            <li>UX/UI.</li>
-                            <li>Conversational (voice & chat).</li>
-                            <li>AI & AI Products.</li>
-                            <li>Gaming & Metaverse.</li>
-                            <li>Immersive (XR, AR, VR).</li>
-                            <li>Innovation Workshops & Roadmapping.</li>
-                            <li>Innovation Hubs.</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-
-        <!-- End Screen 9 - CONTACTO-->
-        <div class="py-16 mt-16 min-h-screen flex flex-col justify-center items-center" id="section1">
-            <h1 class="font-bold text-[3.6rem] leading-[2.8rem] md:text-[8rem] md:leading-[6.1rem] text-center mb-8 md:mb-16">
-                <span class="text-violet">HABLA</span> CON
-                <br>
-                <span class="text-[4rem] md:text-[8.9rem]">NOSOTROS</span>
-            </h1>
-            <div class="text-[1.7rem] leading-[1.4rem] md:text-[4rem] md:leading-[3rem] flex flex-col justify-center item-center">
-                <a class="hidden block font-bold text-center hover:text-violet" target="_blank" href="https://wa.link/lm41yt">WHATSAPP</a>
-                <a class="block font-bold text-center hover:text-violet" target="_blank" href="mailto:talent@nativo.company">TRABAJA CON NOSOTROS</a>
-                <a class="block font-bold text-center hover:text-violet" target="_blank" href="mailto:hello@nativo.company">HELLO@NATIVO.COMPANY</a>
-                <a class="block font-bold text-center hover:text-violet" target="_blank" href="https://mx.linkedin.com/company/nativocom">LINKEDIN</a>
-                <a class="block font-bold text-center hover:text-violet" target="_blank" href="https://www.instagram.com/nativocom">INSTAGRAM</a>
+            <!-- Init Screen 3 - VIDEO REEL -->
+                <div class="w-full sm:min-h-screen flex flex-col justify-center items-center container-screen3">
+                <video class="videoItem w-screen h-auto sm:h-screen object-contain object-center sm:px-8 mx-auto screen3-videoItem" autoplay muted loop>
+                    <source src="https://nativo-sitio-2024-static.s3.amazonaws.com/assets/images/reel_nativo.mp4" type="video/mp4">
+                </video>
             </div>
-        </div>
+            <!-- End Screen 3 -->
 
-    </main>
+            <!-- Init Screen 4 - NUESTRO PROPOSITO -->
+            <div class="w-full flex flex-col justify-center items-center mt-20 sm:mt-40 container-screen4">
+                <div class="w-full overflow-hidden pb-16">
+                    <div class="textItem inline-block text-white box font-bold text-[5rem] sm:text-[8rem] whitespace-nowrap" id="screen4-textItem">
+                        NUESTRO PROPÓSITO
+                    </div>
+                </div>
+            </div>
+            <!-- End Screen 4 -->
+
+            <!-- Init Screen 5 - HUMAN -->
+            <div class="w-full flex justify-center items-center container-screen5">
+                <div class="w-1/2">
+                    <img src="assets/images/asteric.png"
+                         class="w-20 mx-auto screen4-human"
+                         alt="Nativo uyman"
+                    >
+                </div>
+                <div class="w-1/2">
+                    <img src="https://nativo-sitio-2024-static.s3.amazonaws.com/assets/images/human.gif"
+                         class="w-full max-w-[30rem] screen4-human"
+                         alt="Nativo uyman"
+                    >
+                </div>
+            </div>
+            <!-- End Screen 5 -->
+
+            <!-- Init Screen 6 - TEXT LIDERAR -->
+            <div class="w-full pt-40 sm:pt-0 sm:min-h-screen flex flex-col justify-center items-center container-screen6">
+                <div class="relative text-white font-bold text-[2.2rem] leading-[1.7rem] sm:text-[6rem] sm:leading-[4.3rem]" id="screen6-textContent">
+                    <img src="assets/images/open_quotes.png" class="absolute w-20 sm:w-28 -top-16 sm:-top-28 left-0" alt="Quote">
+                    <span>LIDERAR LA</span>
+                    <br>
+                    <span>TRANSFORMACIÓN</span>
+                    <br>
+                    <span class="text-violet">CREATIVA</span> DE LA
+                    <br>
+                    <span class="text-[4rem] leading-[2.8rem] sm:text-[12rem] sm:leading-[8.5rem]">INDUSTRIA</span>
+
+                    <img src="assets/images/close_quotes.png" class="absolute w-20 sm:w-28 -bottom-16 sm:-bottom-28 right-0" alt="Quote">
+                </div>
+            </div>
+            <!-- End Screen 6 -->
+
+            <!-- Init Screen 8 - NAV HORIZONTAL NATIVO NÚMEROS -->
+            <div class="relative w-full min-h-screen flex flex-col justify-center items-center container-screen8">
+                <div class="bg-grid bg-no-repeat bg-cover absolute top-0 left-0 w-screen h-screen screen8-bg-grid"></div>
+                <div class="w-full overflow-hidden">
+                    <div class="textItem inline-block align-middle text-white box font-bold text-[4rem] sm:text-[6rem] whitespace-nowrap space-x-8 py-16" id="screen8-textItem">
+
+                        <div class="inline-block align-middle w-screen text-[3.6rem] sm:text-[8rem] leading-[2.8rem] sm:leading-[6rem] text-center screen8-text1">
+                            NATIVO EN
+                            <br>
+                            <span class="relative text-[4rem] sm:text-[9rem]">
+                                <span class="absolute text-violet top-[1.1rem] left-[4rem] sm:top-[2.5rem] sm:left-[8.5rem]">´</span>
+                                NUMEROS
+                            </span>
+                        </div>
+                        <div class="inline-block align-middle screen8-text1 pl-32">
+                            TENEMOS <span class="text-violet">12 AÑOS</span> EXISTIENDO
+                        </div>
+                        <img src="https://nativo-sitio-2024-static.s3.amazonaws.com/assets/images/nativo_noise.gif"
+                             class="inline-block w-60 sm:w-96"
+                             alt="Nativo noise"
+                        >
+                        <div class="inline-block">
+                            HEMOS COLABORADO CON MÁS DE
+                        </div>
+                        <div class="relative inline-block align-middle text-violet text-[6rem] sm:text-[9rem] pb-6">
+                            200 MARCAS
+                            <span class="absolute bottom-6 right-0 text-white text-[1.5rem] sm:text-[2rem]">* A LO LARGO DE LA HISTORIA</span>
+                        </div>
+                        <div class="inline-block align-middle">
+                            <svg class="inline-block w-16 h-16" viewBox="0 0 63 87" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M51.85 87L0.400001 43.8L52.15 0.599994L62.5 12.6L24.55 43.65L62.5 74.7L51.85 87Z" fill="white"/>
+                            </svg>
+                            <div class="inline-block relative align-middle">
+                                <video class="w-[32rem] sm:w-[42rem] px-16" autoplay muted loop>
+                                    <source src="https://nativo-sitio-2024-static.s3.amazonaws.com/assets/images/reel_phone.mp4" type="video/mp4">
+                                </video>
+                                <img src="assets/images/phone.png"
+                                     class="inline-block w-[30rem] sm:w-[40rem] absolute -top-4 left-4"
+                                     alt="Nativo noise"
+                                >
+                                <span class="absolute -bottom-20 left-0 w-full text-center text-[2.5rem]">EN 40 <span class="text-violet">PAÍSES</span></span>
+                            </div>
+                            <svg class="inline-block align-middle w-16 h-16" viewBox="0 0 63 87" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.1793 0.599994L62.6293 43.8L10.8793 87L0.529298 75L38.4793 43.95L0.529298 12.9L11.1793 0.599994Z" fill="white"/>
+                            </svg>
+
+                        </div>
+                        <div class="inline-block">
+                            EN <span class="text-violet">3 IDIOMAS</span> DISTINTOS.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Screen 8 - NAV HORIZONTAL-->
+
+            <!-- Init Screen 9 - ESENCIA QUE NOS DEFINE -->
+            <div class="hidden w-full container-screen9">
+                <!-- MAIN -->
+                <section class="w-full min-h-screen flex justify-center items-center pt-16 first">
+                    <div class="relative w-[40vh] h-[40vh] sm:w-[50vh] sm:h-[50vh] flex justify-center items-center">
+                        <img src="https://nativo-sitio-2024-static.s3.amazonaws.com/assets/images/circle.gif"
+                             class="w-[40vh] h-[40vh] sm:w-[50vh] sm:h-[50vh] object-contain screen10-circle absolute top-0 left-0"
+                             alt="Nativo"
+                        >
+                        <div class="absolute min-w-[9rem] -top-[10.5rem] sm:-top-[13rem] z-10">
+                            <img src="/assets/images/icon_estrategia.png"
+                                 class="w-28 sm:w-40 mx-auto"
+                                 alt="Nativo - Estrategia"
+                            >
+                            <h3 class="text-center font-bold text-base sm:text-xl">ESTRATEGIA</h3>
+                            <p class="text-violet font-red text-center leading-5">
+                                Conexiones reales.
+                                <br>
+                                Personas diversas
+                            </p>
+                        </div>
+                        <div class="absolute min-w-[9rem] -bottom-[9rem] -left-[2rem] sm:-bottom-[2rem] sm:-left-[7rem] z-10">
+                            <img src="/assets/images/icon_creatividad.png"
+                                 class="w-28 sm:w-40 mx-auto"
+                                 alt="Nativo - Estrategia"
+                            >
+                            <h3 class="text-center font-bold text-base sm:text-xl">CREATIVIDAD</h3>
+                            <p class="text-violet font-red text-center leading-5">
+                                Creatividad
+                                <br>
+                                libre y valiente.
+                            </p>
+                        </div>
+                        <div class="absolute min-w-[9rem] -bottom-[9rem] -right-[3rem] sm:-bottom-[2rem] sm:-right-[7.5rem] z-10">
+                            <img src="/assets/images/icon_innovacion.png"
+                                 class="w-28 sm:w-40 mx-auto"
+                                 alt="Nativo - Estrategia"
+                            >
+                            <h3 class="text-center font-bold text-base sm:text-xl">INNOVACIÓN</h3>
+                            <p class="text-violet font-red text-center leading-5">
+                                Para trascender,
+                                <br>
+                                es necesario transformar.
+                            </p>
+                        </div>
+                        <div class="font-bold text-[1.9rem] leading-[1.4rem] sm:text-[3rem] sm:leading-[2.2rem] z-10 absolute screen9-text1">
+                            LA ESENCIA
+                            <br>
+                            QUE NOS
+                            <br>
+                            DEFINE
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ESTRATEGIA -->
+                <section class="w-full min-h-screen flex justify-center items-center pt-16 screen9-estrategia z-10 page">
+                    <div class="relative w-[40vh] h-[40vh] sm:w-[50vh] sm:h-[50vh] flex justify-center items-center">
+                        <img src="https://nativo-sitio-2024-static.s3.amazonaws.com/assets/images/circle.gif"
+                             class="w-[40vh] h-[40vh] sm:w-[50vh] sm:h-[50vh] object-contain screen10-circle absolute top-0 left-0"
+                             alt="Nativo"
+                        >
+                        <div class="absolute min-w-[9rem] -top-[10.5rem] sm:-top-[13rem] z-10">
+                            <img src="/assets/images/icon_estrategia.png"
+                                 class="w-28 sm:w-40 mx-auto"
+                                 alt="Nativo - Estrategia"
+                            >
+                            <h3 class="text-center font-bold text-base sm:text-xl">ESTRATEGIA</h3>
+                            <p class="text-violet font-red text-center leading-5">
+                                Conexiones reales.
+                                <br>
+                                Personas diversas
+                            </p>
+                        </div>
+                        <div class="text-[1.9rem] leading-[1.4rem] sm:text-[3rem] sm:leading-[2.2rem] z-10 absolute px-10 screen9-text1">
+                            <ul class="font-red list-disc pl-12 text-xs sm:text-base">
+                                <li>Apps & Web.</li>
+                                <li>UX/UI.</li>
+                                <li>Conversational (voice & chat).</li>
+                                <li>AI & AI Products.</li>
+                                <li>Gaming & Metaverse.</li>
+                                <li>Immersive (XR, AR, VR).</li>
+                                <li>Innovation Workshops & Roadmapping.</li>
+                                <li>Innovation Hubs.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CREATIVIDAD -->
+                <section class="w-full min-h-screen flex justify-center items-center pt-16 screen9-estrategia z-10 page">
+                    <div class="relative w-[40vh] h-[40vh] sm:w-[50vh] sm:h-[50vh] flex justify-center items-center">
+                        <img src="https://nativo-sitio-2024-static.s3.amazonaws.com/assets/images/circle.gif"
+                             class="w-[40vh] h-[40vh] sm:w-[50vh] sm:h-[50vh] object-contain screen10-circle absolute top-0 left-0"
+                             alt="Nativo"
+                        >
+                        <div class="absolute min-w-[9rem] -bottom-[9rem] -left-[2rem] sm:-bottom-[2rem] sm:-left-[7rem] z-10">
+                            <img src="/assets/images/icon_creatividad.png"
+                                 class="w-28 sm:w-40 mx-auto"
+                                 alt="Nativo - Estrategia"
+                            >
+                            <h3 class="text-center font-bold text-base sm:text-xl">CREATIVIDAD</h3>
+                            <p class="text-violet font-red text-center leading-5">
+                                Creatividad
+                                <br>
+                                libre y valiente.
+                            </p>
+                        </div>
+                        <div class="text-[1.9rem] leading-[1.4rem] sm:text-[3rem] sm:leading-[2.2rem] z-10 absolute px-10 screen9-text1">
+                            <ul class="font-red list-disc pl-12 text-xs sm:text-base">
+                                <li>Creatividad / Campañas</li>
+                                <li>Social media. </li>
+                                <li>Internal Hubs.</li>
+                                <li>Content creation.</li>
+                                <li>Talent & IM: </li>
+                                <li>Events & brand activations.</li>
+                                <li>Production services</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- INNOVACION -->
+                <section class="w-full min-h-screen flex justify-center items-center pt-16 screen9-estrategia z-10 page">
+                    <div class="relative w-[40vh] h-[40vh] sm:w-[50vh] sm:h-[50vh] flex justify-center items-center">
+                        <img src="https://nativo-sitio-2024-static.s3.amazonaws.com/assets/images/circle.gif"
+                             class="w-[40vh] h-[40vh] sm:w-[50vh] sm:h-[50vh] object-contain screen10-circle absolute top-0 left-0"
+                             alt="Nativo"
+                        >
+                        <div class="absolute min-w-[9rem] -bottom-[9rem] -right-[3rem] sm:-bottom-[2rem] sm:-right-[7.5rem] z-10">
+                            <img src="/assets/images/icon_innovacion.png"
+                                 class="w-28 sm:w-40 mx-auto"
+                                 alt="Nativo - Estrategia"
+                            >
+                            <h3 class="text-center font-bold text-base sm:text-xl">INNOVACIÓN</h3>
+                            <p class="text-violet font-red text-center leading-5">
+                                Para trascender,
+                                <br>
+                                es necesario transformar.
+                            </p>
+                        </div>
+                        <div class="text-[1.9rem] leading-[1.4rem] sm:text-[3rem] sm:leading-[2.2rem] z-10 absolute px-10 screen9-text1">
+                            <ul class="font-red list-disc pl-12 text-xs sm:text-base">
+                                <li>Planning</li>
+                                <li>Consultoría estratégica.</li>
+                                <li>Medialab. </li>
+                                <li>Datalab.</li>
+                                <li>CRM inbound marketing.</li>
+                                <li>SEO 360.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Init Screen 10 Titulo -->
+            <div class="w-full min-h-screen flex flex-col justify-center items-center container-title-services" id="section_servicios">
+                <h2 class="text-5xl md:text-6xl lg:text-8xl font-bold text-center title-clients">
+                    SERVICIOS
+                </h2>
+            </div>
+            <!-- End Screen 10 titulo -->
+
+            <!-- End Screen 10 - SERVICIOS-->
+            <div class="py-16 mt-16 min-h-screen flex flex-col justify-center items-center">
+                <div class="container">
+                    <h2 class="font-red font-bold text-4xl mb-4">Servicios</h2>
+                    <div class="flex justify-center items-start gap-16">
+                        <div class="w-1/2">
+                            <div class="">
+                                <img v-if="service_active == 1" src="/assets/images/servicios/creatividad/campanas.gif" class="w-full h-[24rem] object-contain object-center" alt="Gif Social Media">
+                                <img v-if="service_active == 2" src="/assets/images/servicios/creatividad/social_media.gif" class="w-full h-[24rem] object-contain object-center" alt="Gif Social Media">
+                                <img v-if="service_active == 3" src="/assets/images/servicios/creatividad/internalhubs.gif" class="w-full h-[24rem] object-contain object-center" alt="Gif Social Media">
+                                <img v-if="service_active == 4" src="/assets/images/servicios/creatividad/content-creation.gif" class="w-full h-[24rem] object-contain object-center" alt="Gif Social Media">
+                                <img v-if="service_active == 5" src="/assets/images/servicios/creatividad/production-services.gif" class="w-full h-[24rem] object-contain object-center" alt="Gif Social Media">
+                                <img v-if="service_active == 6" src="/assets/images/servicios/creatividad/Maximización.gif" class="w-full h-[24rem] object-contain object-center" alt="Gif Social Media">
+                                <img v-if="service_active == 7" src="/assets/images/servicios/creatividad/talent-Influencer.gif" class="w-full h-[24rem] object-contain object-center" alt="Gif Social Media">
+                                <img v-if="service_active == 8" src="/assets/images/servicios/creatividad/brand-activation.gif" class="w-full h-[24rem] object-contain object-center" alt="Gif Social Media">
+                                <img v-if="service_active == 9" src="/assets/images/servicios/strategy/MediaLab.gif" class="w-full h-[24rem] object-contain object-center" alt="Gif Social Media">
+                                <img v-if="service_active == 10" src="/assets/images/servicios/strategy/DataLab.gif" class="w-full h-[24rem] object-contain object-center" alt="Gif Social Media">
+                                <img v-if="service_active == 11" src="/assets/images/servicios/strategy/SEO.gif" class="w-full h-[24rem] object-contain object-center" alt="Gif Social Media">
+                                <img v-if="service_active == 12" src="/assets/images/servicios/strategy/CRM.gif" class="w-full h-[24rem] object-contain object-center" alt="Gif Social Media">
+                                <img v-if="service_active == 13" src="/assets/images/servicios/strategy/Planning.gif" class="w-full h-[24rem] object-contain object-center" alt="Gif Social Media">
+                                <img v-if="service_active == 14" src="/assets/images/servicios/creatividad/internal_hubs.png" class="w-full h-[24rem] object-contain object-center" alt="Gif Social Media">
+                                <img v-if="service_active == 15" src="/assets/images/servicios/strategy/Metodologías.gif" class="w-full h-[24rem] object-contain object-center" alt="Gif Social Media">
+                                <img v-if="service_active == 16" src="/assets/images/servicios/innovation/PhygitaLab.gif" class="w-full h-[24rem] object-contain object-center" alt="Gif Social Media">
+                                <img v-if="service_active == 17" src="/assets/images/servicios/strategy/GLITCH.gif" class="w-full h-[24rem] object-contain object-center" alt="Gif Social Media">
+                            </div>
+                            <div class="flex flex-wrap mt-8 text-violet font-bold text-sm gap-2">
+                                <template v-if="service_active == 2">
+                                    <div class="border border-violet rounded-full px-4 py-2">Data Driven Marketing (DDM)</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Parrillas de contenido</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Estrategia de plataformas y contenidos por audiencia</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Producción de contenidos</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Community management</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Automatización de interacciones (chatbots)</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Conversaciones reales</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Protocolo de manejo de crisis</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Reporting — automatizado y procesado</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Realtime</div>
+                                </template>
+                                <template v-if="service_active == 3">
+                                    <div class="border border-violet rounded-full px-4 py-2">Evaluación y creación de estrategia de internal hubs</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Modelos de contratación</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Equipos de soporte</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Headhunting</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Capacitación de talento</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Colaboración multiagencia</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Modelo REPSE</div>
+                                </template>
+                                <template v-if="service_active == 4">
+                                    <div class="border border-violet rounded-full px-4 py-2">Guiones</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Diseño</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Animación, animación 3D</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Ilustración</div>
+                                </template>
+                                <template v-if="service_active == 5">
+                                    <div class="border border-violet rounded-full px-4 py-2">TVC</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Contenido especializado para digital</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Spots Digitales</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Foto, video y coberturas</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Maximización digital</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Renta de foro</div>
+                                </template>
+                                <template v-if="service_active == 6">
+                                    <div class="border border-violet rounded-full px-4 py-2">Foto</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Video</div>
+                                </template>
+                                <template v-if="service_active == 7">
+                                    <div class="border border-violet rounded-full px-4 py-2">Contratación de Influencers</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Embajadores de marca</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Contratación de Content Creators</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Contratación de Memeros</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Gestión de Talento Celebridades</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Gestión de influencers Gamers</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Gestión de Medios Aliados</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Estrategias de PR</div>
+                                </template>
+                                <template v-if="service_active == 8">
+                                    <div class="border border-violet rounded-full px-4 py-2">Conferencias</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Lanzamiento de productos</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Talleres</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Eventos corporativos internos</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Presencia en festivales</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Activaciones BTL</div>
+                                </template>
+                                <template v-if="service_active == 9">
+                                    <div class="border border-violet rounded-full px-4 py-2">Planeación estratégica.</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Compra y optimización de medios: ATL, BTL, Digital OOH, OOH Interactivo, Programmatic, CTV.</div>
+                                </template>
+                                <template v-if="service_active == 10">
+                                    <div class="border border-violet rounded-full px-4 py-2">Data Driven Marketing (DDM)</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Detección de insights y tendencias (real-time & mid/long term)</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Estudios de mercado</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">User experience y customer journey</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Social listening</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Análisis de sentimiento</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Prevención de crisis</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Generación de audiencias</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Recolección de data durante el consumer journey</div>
+                                </template>
+                                <template v-if="service_active == 11">
+                                    <div class="border border-violet rounded-full px-4 py-2">Implementación de estrategia SEO, contenidos y Social Media.</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Consultoría SEO</div>
+                                </template>
+                                <template v-if="service_active == 12">
+                                    <div class="border border-violet rounded-full px-4 py-2">Consultoría</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Implementación de estrategia CRM a través de Hubspot</div>
+                                </template>
+                                <template v-if="service_active == 13">
+                                </template>
+                                <template v-if="service_active == 14">
+                                    <div class="border border-violet rounded-full px-4 py-2">Brand strategy</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Creative strategy</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Metodologías Nativo</div>
+                                </template>
+                                <template v-if="service_active == 15">
+                                </template>
+                                <template v-if="service_active == 16">
+                                    <div class="border border-violet rounded-full px-4 py-2">Apps & Web</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">UX/UI</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Conversational (voice & chat)</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">AI & AI Products</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Gaming & Metaverse</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Immersive (XR, AR, VR)</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Innovation workshops & roadmapping</div>
+                                    <div class="border border-violet rounded-full px-4 py-2">Innovation Hubs</div>
+                                </template>
+
+                            </div>
+                        </div>
+                        <div class="w-1/2">
+                            <ul class="space-y-4">
+                                <li class="text-gray text-base md:text-5xl">
+                                    <div @click="showPilarServices(1)" class="font-bold hover:bg-violet transition-all hover:text-white cursor-pointer">CREATIVIDAD</div>
+                                    <ul v-if="pilar_active == 1" class="pl-10 font-extralight space-y-2 text-md md:text-4xl">
+                                        <li @mouseover="showService(1)" class="hover:bg-violet hover:translate-x-6 transition-all hover:text-white cursor-pointer" :class="service_active == 1 ? 'bg-violet text-white' : ''"><strong class="font-bold">CAMPAÑAS</strong></li>
+                                        <li @mouseover="showService(2)" class="hover:bg-violet hover:translate-x-6 transition-all hover:text-white cursor-pointer" :class="service_active == 2 ? 'bg-violet text-white' : ''">SOCIAL<strong class="font-bold">MEDIA</strong></li>
+                                        <li @mouseover="showService(3)" class="hover:bg-violet hover:translate-x-6 transition-all hover:text-white cursor-pointer" :class="service_active == 3 ? 'bg-violet text-white' : ''">INTERNAL<strong class="font-bold">HUBS</strong></li>
+                                        <li @mouseover="showService(4)" class="hover:bg-violet hover:translate-x-6 transition-all hover:text-white cursor-pointer" :class="service_active == 4 ? 'bg-violet text-white' : ''">CONTENT<strong class="font-bold">CREATION</strong></li>
+                                        <li @mouseover="showService(5)" class="hover:bg-violet hover:translate-x-6 transition-all hover:text-white cursor-pointer" :class="service_active == 5 ? 'bg-violet text-white' : ''">PRODUCTION<strong class="font-bold">SERVICES</strong></li>
+                                        <li @mouseover="showService(6)" class="hover:bg-violet hover:translate-x-6 transition-all hover:text-white cursor-pointer" :class="service_active == 6 ? 'bg-violet text-white' : ''">MAXIMIZACIÓN<strong class="font-bold">DIGITAL</strong></li>
+                                        <li @mouseover="showService(7)" class="hover:bg-violet hover:translate-x-6 transition-all hover:text-white cursor-pointer" :class="service_active == 7 ? 'bg-violet text-white' : ''">TALENT&<strong class="font-bold">INFLUENCERS</strong></li>
+                                        <li @mouseover="showService(8)" class="hover:bg-violet hover:translate-x-6 transition-all hover:text-white cursor-pointer" :class="service_active == 8 ? 'bg-violet text-white' : ''">BRAND<strong class="font-bold">ACTIVATION</strong></li>
+                                    </ul>
+                                </li>
+                                <li class="text-gray text-5xl">
+                                    <div @click="showPilarServices(2)" class="font-bold hover:bg-violet transition-all hover:text-white cursor-pointer">ESTRATEGIA</div>
+                                    <ul v-if="pilar_active == 2" class="pl-10 font-extralight space-y-2 text-md md:text-4xl">
+                                        <li @mouseover="showService(9)" class="hover:bg-violet hover:translate-x-6 transition-all hover:text-white cursor-pointer" :class="service_active == 9 ? 'bg-violet text-white' : ''">MEDIA<strong class="font-bold">LAB</strong></li>
+                                        <li @mouseover="showService(10)" class="hover:bg-violet hover:translate-x-6 transition-all hover:text-white cursor-pointer" :class="service_active == 10 ? 'bg-violet text-white' : ''">DATA<strong class="font-bold">LAB</strong></li>
+                                        <li @mouseover="showService(11)" class="hover:bg-violet hover:translate-x-6 transition-all hover:text-white cursor-pointer" :class="service_active == 11 ? 'bg-violet text-white' : ''"><strong class="font-bold">SEO</strong></li>
+                                        <li @mouseover="showService(12)" class="hover:bg-violet hover:translate-x-6 transition-all hover:text-white cursor-pointer" :class="service_active == 12 ? 'bg-violet text-white' : ''"><strong class="font-bold">CRM</strong></li>
+                                        <li @mouseover="showService(13)" class="hover:bg-violet hover:translate-x-6 transition-all hover:text-white cursor-pointer" :class="service_active == 13 ? 'bg-violet text-white' : ''"><strong class="font-bold">PLANNING</strong></li>
+                                        <!-- <li @mouseover="showService(14)" class="hover:bg-violet hover:translate-x-6 transition-all hover:text-white cursor-pointer" :class="service_active == 14 ? 'bg-violet text-white' : ''"><strong class="font-bold">CONSULTORÍA</strong></li> -->
+                                        <li @mouseover="showService(15)" class="hover:bg-violet hover:translate-x-6 transition-all hover:text-white cursor-pointer" :class="service_active == 15 ? 'bg-violet text-white' : ''"><strong class="font-bold">METODOLOGÍAS</strong></li>
+                                        <li @mouseover="showService(17)" class="hover:bg-violet hover:translate-x-6 transition-all hover:text-white cursor-pointer" :class="service_active == 17 ? 'bg-violet text-white' : ''"><strong class="font-bold">GLITCH</strong></li>
+
+                                    </ul>
+                                </li>
+                                <li class="text-gray text-5xl">
+                                    <div @click="showPilarServices(3)" class="font-bold hover:bg-violet transition-all hover:text-white cursor-pointer">INNOVACIÓN</div>
+                                    <ul v-if="pilar_active == 3" class="pl-10 font-extralight space-y-2 text-md md:text-4xl">
+                                        <li @mouseover="showService(16)" class="hover:bg-violet hover:translate-x-6 transition-all hover:text-white cursor-pointer" :class="service_active == 16 ? 'bg-violet text-white' : ''"><strong class="font-bold">PHYGITALAB</strong></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Init Screen 11 Titulo -->
+            <div class="w-full min-h-screen flex flex-col justify-center items-center container-title-clients px-8" id="section_partners">
+                <h2 class="text-3xl md:text-4xl lg:text-6xl font-bold text-center title-clients">
+                    CONOCE ALGUNOS DE NUESTROS PARTNERS
+                </h2>
+            </div>
+            <!-- End Screen 11 titulo -->
+
+            <!-- End Screen 11 - CLIENTES-->
+            <div class="container-clientes w-[1000%] text-4xl sm:text-8xl leading-[1.7rem] sm:leading-[4.26rem]">
+                <div class="panel">
+                    <div class="container">
+                        <div class="">
+                            <h3 class="font-bold text-4xl mb-8 leading-7">
+                                <small class="text-2xl font-light text-violet">CATEGORÍA</small>
+                                <br>
+                                ALIMENTOS
+                            </h3>
+                            <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-12 w-full max-w-4xl ml-auto">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/alimentos/solero.webp" alt="Logo Solero">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/alimentos/lala.webp" alt="Logo Lala">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/alimentos/grillers.webp" alt="Logo Grillers">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/alimentos/upfield.webp" alt="Logo Upfiled">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/alimentos/bafar.webp" alt="Logo Bafar">
+
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/alimentos/maizena.webp" alt="Logo Maizena">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/alimentos/sabori.webp" alt="Logo Sabori">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/alimentos/holanda.webp" alt="Logo Holanda">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/alimentos/grupo_bafar.webp" alt="Logo Grupo Bafar">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/alimentos/muibon.webp" alt="Logo Muibon">
+
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/alimentos/ben&jerrys.webp" alt="Logo Ben & Jerrys">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/alimentos/parma.webp" alt="Logo Parma">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/alimentos/cornetto.webp" alt="Logo Cornetto">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/alimentos/carrancedo.webp" alt="Logo Carrancedo">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/alimentos/iberia.webp" alt="Logo Iberia">
+
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/alimentos/primavera.webp" alt="Logo primavera">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/alimentos/chokis.webp" alt="Logo Chokis">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/alimentos/pureit.webp" alt="Logo Pure it">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/alimentos/butter.webp" alt="Logo Butter">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/alimentos/hellmans.webp" alt="Logo Hellamns">
+
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/alimentos/crackets.webp" alt="Logo Crackets">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/alimentos/unilever.webp" alt="Logo Unilever">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="container">
+                        <div class="">
+                            <h3 class="font-bold text-4xl mb-8 leading-7">
+                                <small class="text-2xl font-light text-violet">CATEGORÍA</small>
+                                <br>
+                                AUTOMOTRIZ
+                            </h3>
+                            <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-12 w-full max-w-4xl ml-auto">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/automotriz/jeep.webp" alt="Logo Jeep">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/automotriz/alfa_romeo.webp" alt="Logo Alfa Romeo">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/automotriz/mopar.webp" alt="Logo Mopar">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/automotriz/ram.webp" alt="Logo RAM">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/automotriz/fca.webp" alt="Logo FCA">
+
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/automotriz/dodge.webp" alt="Logo Dodge">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/automotriz/vw.webp" alt="Logo VW">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="container">
+                        <div class="">
+                            <h3 class="font-bold text-4xl mb-8 leading-7">
+                                <small class="text-2xl font-light text-violet">CATEGORÍA</small>
+                                <br>
+                                BEBIDAS
+                            </h3>
+                            <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-12 w-full max-w-4xl ml-auto">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/bebidas/tecate.webp" alt="Logo Tecate">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/bebidas/xx.webp" alt="Logo XX">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/bebidas/indio.webp" alt="Logo Indio">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/bebidas/bohemia.webp" alt="Logo Bohemia">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/bebidas/amstel.webp" alt="Logo Amstel">
+
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/bebidas/400_conejos.webp" alt="Logo 400 Conejos">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/bebidas/sol.webp" alt="Logo Sol">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/bebidas/1800.webp" alt="Logo 1800">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/bebidas/azul_centenario.webp" alt="Logo Centenario">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/bebidas/dobel.webp" alt="Logo Dobel">
+
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/bebidas/heineken.webp" alt="Logo Heineken">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/bebidas/creyente.webp" alt="Logo Creyente">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/bebidas/centenario.webp" alt="Logo Centenario">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/bebidas/boost.webp" alt="Logo Boost">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="container">
+                        <div class="">
+                            <h3 class="font-bold text-4xl mb-8 leading-7">
+                                <small class="text-2xl font-light text-violet">CATEGORÍA</small>
+                                <br>
+                                ENTRETENIMIENTO
+                            </h3>
+                            <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-12 w-full max-w-4xl ml-auto">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/entretenimiento/hbo.webp" alt="Logo HBO">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/entretenimiento/pantaya.webp" alt="Logo PANTAYA">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/entretenimiento/back_door.webp" alt="Logo BACK DOOR">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/entretenimiento/claro_video.webp" alt="Logo Claro Video">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/entretenimiento/claro_musica.webp" alt="Logo Amstel">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="container">
+                        <div class="">
+                            <h3 class="font-bold text-4xl mb-8 leading-7">
+                                <small class="text-2xl font-light text-violet">CATEGORÍA</small>
+                                <br>
+                                MODA
+                            </h3>
+                            <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-12 w-full max-w-4xl ml-auto">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/moda/dockers.webp" alt="Logo dockers">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/moda/gap.webp" alt="Logo PANTAYA">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/moda/sxy_jeans.webp" alt="Logo BACK sxy jeans">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="container">
+                        <div class="">
+                            <h3 class="font-bold text-4xl mb-8 leading-7">
+                                <small class="text-2xl font-light text-violet">CATEGORÍA</small>
+                                <br>
+                                PERSONAL CARE <br>+ CPG
+                            </h3>
+                            <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-12 w-full max-w-4xl ml-auto">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/unilever.webp" alt="Logo unilever">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/stives.webp" alt="Logo stives">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/mia.webp" alt="Logo mia">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/regio.webp" alt="Logo regio">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/axe.webp" alt="Logo axe">
+
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/zest.webp" alt="Logo zest">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/camay.webp" alt="Logo camay">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/dove.webp" alt="Logo dove">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/baby_dove.webp" alt="Logo baby_dove">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/dove_men.webp" alt="Logo dove_men">
+
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/rexona.webp" alt="Logo rexona">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/sedal.webp" alt="Logo sedal">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/nexxus.webp" alt="Logo nexxus">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/ponds.webp" alt="Logo ponds">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/tresemme.webp" alt="Logo tresemme">
+
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/folicure.webp" alt="Logo folicure">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/mom.webp" alt="Logo mom">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/bissu.webp" alt="Logo bissu">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/colgate.webp" alt="Logo colgate">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/alen.webp" alt="Logo alen">
+
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/cloralex.webp" alt="Logo cloralex">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/eficaz.webp" alt="Logo eficaz">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/ensueno.webp" alt="Logo ensueno">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/personal_care/flash.webp" alt="Logo flash">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="container">
+                        <div class="">
+                            <h3 class="font-bold text-4xl mb-8 leading-7">
+                                <small class="text-2xl font-light text-violet">CATEGORÍA</small>
+                                <br>
+                                PHARMA
+                            </h3>
+                            <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-12 w-full max-w-4xl ml-auto">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/pharma/devlyn.webp" alt="Logo devlyn">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/pharma/bayer.webp" alt="Logo bayer">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/pharma/monange.webp" alt="Logo monange">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/pharma/pfiser.webp" alt="Logo pfiser">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/pharma/chopo.webp" alt="Logo chopo">
+
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/pharma/affective.webp" alt="Logo affective">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/pharma/tena.webp" alt="Logo tena">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/pharma/nicte.webp" alt="Logo nicte">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/pharma/purity.webp" alt="Logo purity">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/pharma/san_pablo.webp" alt="Logo san_pablo">
+
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/pharma/ifa.webp" alt="Logo ifa">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/pharma/bescience.webp" alt="Logo bescience">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/pharma/oralia.webp" alt="Logo oralia">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="container">
+                        <div class="">
+                            <h3 class="font-bold text-4xl mb-8 leading-7">
+                                <small class="text-2xl font-light text-violet">CATEGORÍA</small>
+                                <br>
+                                RESTAURANTES
+                            </h3>
+                            <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-12 w-full max-w-4xl ml-auto">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/restaurantes/shake_shack.webp" alt="Logo shake_shak">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/restaurantes/el_porton.webp" alt="Logo el_porton">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/restaurantes/pf_changs.webp" alt="Logo pf_changs">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/restaurantes/italiannis.webp" alt="Logo italianis">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/restaurantes/alsea.webp" alt="Logo alsea">
+
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/restaurantes/cheesecake_factory.webp" alt="Logo cheesecake">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/restaurantes/california.webp" alt="Logo california">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="container">
+                        <div class="">
+                            <h3 class="font-bold text-4xl mb-8 leading-7">
+                                <small class="text-2xl font-light text-violet">CATEGORÍA</small>
+                                <br>
+                                TECH
+                            </h3>
+                            <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-12 w-full max-w-4xl ml-auto">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/tech/clip.webp" alt="Logo clip">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/tech/sony.webp" alt="Logo sony">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/tech/pioneer.webp" alt="Logo pioneer">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/tech/twitter.webp" alt="Logo twitter">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/tech/att.webp" alt="Logo att">
+
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/tech/54d.webp" alt="Logo 54d">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/tech/glup.webp" alt="Logo glup">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="container">
+                        <div class="">
+                            <h3 class="font-bold text-4xl mb-8 leading-7">
+                                <small class="text-2xl font-light text-violet">CATEGORÍA</small>
+                                <br>
+                                OTRAS
+                            </h3>
+                            <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-12 w-full max-w-4xl ml-auto">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/otras/posadas.webp" alt="Logo posadas">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/otras/meridian.webp" alt="Logo meridian">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/otras/leona.webp" alt="Logo leona">
+                                <img class="w-full h-8 md:h-12 object-contain object-center" src="/assets/images/clientes/otras/debolsillo.webp" alt="Logo debolsillo">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- End Screen 12 - CONTACTO-->
+            <div class="py-16 mt-16 min-h-screen flex flex-col justify-center items-center" id="section_hablemos">
+                <h1 class="font-bold text-[3.6rem] leading-[2.8rem] md:text-[8rem] md:leading-[6.1rem] text-center mb-8 md:mb-16">
+                    <span class="text-violet">HABLA</span> CON
+                    <br>
+                    <span class="text-[4rem] md:text-[8.9rem]">NOSOTROS</span>
+                </h1>
+                <div class="text-[1.7rem] leading-[1.4rem] md:text-[4rem] md:leading-[3rem] flex flex-col justify-center item-center">
+                    <a class="block font-bold text-center hover:text-violet" target="_blank" href="https://wa.link/lm41yt">WHATSAPP</a>
+                    <a class="block font-bold text-center hover:text-violet" target="_blank" href="mailto:hello@nativo.company">HELLO@NATIVO.COMPANY</a>
+                    <a class="block font-bold text-center hover:text-violet" target="_blank" href="https://mx.linkedin.com/company/nativocom">LINKEDIN</a>
+                    <a class="block font-bold text-center hover:text-violet" target="_blank" href="https://www.instagram.com/nativocom">INSTAGRAM</a>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        const { createApp, ref } = Vue
+
+        createApp({
+            data() {
+                return {
+                    pilar_active: 1,
+                    service_active: 1
+                }
+            },
+            methods: {
+                showPilarServices(pilar) {
+                    this.pilar_active = pilar;
+                    if (pilar == 1){
+                        this.service_active = 1;
+                    }else if (pilar == 2){
+                        this.service_active = 9;
+                    }else if (pilar == 3){
+                        this.service_active = 16;
+                    }
+                },
+                showService(service) {
+                    this.service_active = service;
+                },
+            },
+        }).mount('#app')
+    </script>
 
     <script>
         // use a script tag or an external JS file
@@ -429,9 +907,9 @@
 
 
             // SCROLL TO
-            document.querySelectorAll("nav button").forEach((btn, index) => {
+            document.querySelectorAll("button.link").forEach((btn, index) => {
                 btn.addEventListener("click", () => {
-                    gsap.to(window, {duration: 1, scrollTo:{y:"#section" + (index + 1), offsetY:70}});
+                    gsap.to(window, {duration: 1, scrollTo:{y:"#section_" + (btn.dataset.link), offsetY:0}});
                 });
             });
 
@@ -558,6 +1036,55 @@
                     start: "bottom bottom",
                     markers: false,
                     scrub: 1
+                }
+            });
+
+            // SECREEN TITLE SERVICES
+            gsap.fromTo('.title-services', {
+                opacity: 0.5
+            },{
+                opacity: 1,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: ".container-title-services",
+                    toggleActions: "play none play reverse",
+                    pin: true,
+                    start: "top top",
+                    markers: false,
+                    scrub: 1
+                }
+            })
+
+            // SECREEN TITLE CLIENTES
+            gsap.fromTo('.title-clients', {
+                opacity: 0.5
+            },{
+                opacity: 1,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: ".container-title-clients",
+                    toggleActions: "play none play reverse",
+                    pin: true,
+                    start: "top top",
+                    markers: false,
+                    scrub: 1
+                }
+            })
+
+            // SCREEN 11
+            // CLIENTES
+            let sections_clientes = gsap.utils.toArray(".container-clientes .panel");
+            gsap.to(sections_clientes, {
+                xPercent: -100 * (sections_clientes.length - 1),
+                ease: "none",
+                scrollTrigger: {
+                    trigger: ".container-clientes",
+                    pin: true,
+                    scrub: 1,
+                    snap: 1 / (sections_clientes.length - 1),
+                    // base vertical scrolling on how wide the container is so it feels more natural.
+                    end: "+=3500",
+                    markers: false
                 }
             });
 

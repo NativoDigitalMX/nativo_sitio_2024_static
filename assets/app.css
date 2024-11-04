@@ -108,6 +108,17 @@
         font-display: swap;
     }
 
+    @font-face {
+        font-family: 'Prompt';
+        src: url('./fonts/Prompt-ExtraLight.woff2') format('woff2'),
+        url('./fonts/Prompt-ExtraLight.woff') format('woff');
+        font-weight: 200;
+        font-style: normal;
+        font-display: swap;
+    }
+
+
+
 
     body {
         color: #ffffff;
@@ -138,9 +149,6 @@
     align-items: center;
 }
 
-
-
-
     .container-screen9 {
         position: relative;
         padding-bottom: 56.25%; /* to maintain aspect ratio (responsive!) */
@@ -163,4 +171,24 @@
         height: 100%;
         position: absolute;
         top: 0;
+    }
+
+
+
+    .container-clientes {
+        overscroll-behavior: none;
+        /*width: 600%;*/
+        height: 100vh;
+        display: flex;
+
+        flex-wrap: nowrap;
+    }
+    .container-clientes .panel{
+        @apply w-screen h-full;
+        width: 100vw;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        padding-top: 6rem;
     }
