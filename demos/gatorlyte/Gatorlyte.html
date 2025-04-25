@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Juego Gatorlyte Divs</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background: url('img/bg.jpg') no-repeat center center;
+      background-size: cover;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+    }
+
+    #juego {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    #loading {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #d62728;
+      color: white;
+      font-size: 2em;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 100;
+    }
+
+    #intro, #gameOverScreen {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('img/background-first.jpg') no-repeat center center;
+      background-size: cover;
+      z-index: 50;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      display: none;
+    }
+
+    #intro img, #gameOverScreen img {
+      width: 80%;
+      max-width: 600px;
+    }
+
+    .bloque {
+      position: absolute;
+      border-radius: 8px;
+      transition: all 0.1s ease;
+    }
+
+    .rojo {
+      background: url('img/Gatorlyte.png') no-repeat center bottom;
+      background-size: contain;
+      width: 12%;
+      height: 25%;
+      z-index: 1;
+    }
+
+    .azul {
+      background: url('img/mano.png') no-repeat center bottom;
+      background-size: contain;
+      width: 40%;
+      height: 40%;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+    }
+
+    #scoreBar {
+      position: absolute;
+      top: 10px;
+      right: 5%;
+      width: 180px;
+      height: 64px;
+      z-index: 3;
+    }
+
+    #scoreBar img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 180px;
+      height: 64px;
+      object-fit: contain;
+    }
+
+    #scoreEmpty { z-index: 1; }
+    #scoreFull {
+      z-index: 2;
+      clip-path: inset(0 100% 0 0);
+      transition: clip-path 0.2s ease-out;
+    }
+
+    #vidasContainer {
+      position: absolute;
+      top: calc(10px + 40px + 2%);
+      right: 5%;
+      display: flex;
+      gap: 10px;
+      z-index: 3;
+    }
+
+    .vida {
+      width: 50px;
+      height: 50px;
+      background: url('img/unactive.png') no-repeat center center;
+      background-size: contain;
+    }
+
+    #bienOverlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 150px;
+      height: 150px;
+      margin-left: -75px;
+      margin-top: -75px;
+      background: url('img/bien.png') no-repeat center center;
+      background-size: contain;
+      display: none;
+      z-index: 20;
+      animation: popIn 0.3s ease-out forwards;
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0.5); opacity: 0; }
+      50% { transform: scale(1.1); opacity: 1; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    #logoImg {
+      position: absolute;
+      top: 0;
+      left: 5%;
+      width: 40%;
+      height: 80px;
+      background: url('img/Logo.png') no-repeat center center;
+      background-size: contain;
+      z-index: 3;
+    }
+  </style>
+</head>
+<body>
+  <div id="juego">
+    <div id="loading">Cargando...</div>
+
+    <div id="intro">
+      <img src="img/copyFirst.png" alt="Intro Copy" />
+    </div>
+
+    <div id="gameOverScreen">
+      <img src="img/perdiste.png" alt="Perdiste" />
+    </div>
+
+    <div id="logoImg"></div>
+
+    <div id="scoreBar">
+      <img src="img/empty.png" id="scoreEmpty" alt="Barra vacía">
+      <img src="img/full.png" id="scoreFull" alt="Barra llena">
+    </div>
+
+    <div id="vidasContainer">
+      <div class="vida" id="vida0"></div>
+      <div class="vida" id="vida1"></div>
+      <div class="vida" id="vida2"></div>
+    </div>
+
+    <div id="bienOverlay"></div>
+    <div class="bloque azul" id="canasta"></div>
+  </div>
+
+  <script>
+    const loadingScreen = document.getElementById("loading");
+    const intro = document.getElementById("intro");
+    const gameOverScreen = document.getElementById("gameOverScreen");
+    const juego = document.getElementById("juego");
+    const canasta = document.getElementById("canasta");
+    const bienOverlay = document.getElementById("bienOverlay");
+    const scoreFull = document.getElementById("scoreFull");
+    const vidas = [
+      document.getElementById("vida0"),
+      document.getElementById("vida1"),
+      document.getElementById("vida2")
+    ];
+
+    let score, speed, lives, isShowingBien, intervaloBotellas, botellasActivas, canastaX, movingLeft, movingRight, juegoIniciado;
+
+    function resetearJuego() {
+      score = 0;
+      speed = 3;
+      lives = 3;
+      isShowingBien = false;
+      botellasActivas = [];
+      canastaX = window.innerWidth / 2 - canasta.offsetWidth / 2;
+      movingLeft = false;
+      movingRight = false;
+      juegoIniciado = false;
+      document.getElementById("scoreFull").style.clipPath = "inset(0 100% 0 0)";
+      vidas.forEach(v => v.style.background = "url('img/unactive.png') no-repeat center center");
+      vidas.forEach(v => v.style.backgroundSize = "contain");
+    }
+
+    function iniciarJuego() {
+      if (juegoIniciado) return;
+      juegoIniciado = true;
+      intro.style.display = "none";
+      gameOverScreen.style.display = "none";
+      intervaloBotellas = setInterval(() => {
+        if (lives <= 0) return;
+        const cuantos = Math.min(Math.floor(speed / 3), 4);
+        for (let i = 0; i < cuantos; i++) {
+          setTimeout(() => crearRojo(), i * 100 + Math.random() * 100);
+        }
+      }, 1000);
+      loop();
+    }
+
+    intro.addEventListener("click", () => {
+      resetearJuego();
+      iniciarJuego();
+    });
+
+    gameOverScreen.addEventListener("click", () => {
+      resetearJuego();
+      iniciarJuego();
+    });
+
+    function updateCanasta() {
+      if (movingLeft) canastaX -= 8;
+      else if (movingRight) canastaX += 8;
+      const maxRight = window.innerWidth + canasta.offsetWidth * 0.2;
+      const minLeft = -canasta.offsetWidth * 0.2;
+      canastaX = Math.max(minLeft, Math.min(maxRight, canastaX));
+      canasta.style.left = canastaX + "px";
+    }
+
+    let touchStartX = null;
+    document.addEventListener("touchstart", e => touchStartX = e.touches[0].clientX);
+    document.addEventListener("touchmove", e => {
+      if (touchStartX !== null) {
+        const currentX = e.touches[0].clientX;
+        const deltaX = currentX - touchStartX;
+        canastaX += deltaX;
+        canastaX = Math.max(-canasta.offsetWidth * 0.2, Math.min(window.innerWidth + canasta.offsetWidth * 0.2, canastaX));
+        touchStartX = currentX;
+      }
+    });
+    document.addEventListener("touchend", () => touchStartX = null);
+
+    document.addEventListener("keydown", e => {
+      if (e.key === "ArrowLeft") movingLeft = true;
+      if (e.key === "ArrowRight") movingRight = true;
+    });
+    document.addEventListener("keyup", e => {
+      if (e.key === "ArrowLeft") movingLeft = false;
+      if (e.key === "ArrowRight") movingRight = false;
+    });
+
+    function actualizarBarraPuntos() {
+      const porcentaje = Math.min(score / 2000, 1);
+      const clipValue = 100 - porcentaje * 100;
+      scoreFull.style.clipPath = `inset(0 ${clipValue}% 0 0)`;
+    }
+
+    function crearRojo() {
+      const rojo = document.createElement("div");
+      rojo.classList.add("bloque", "rojo");
+      rojo.style.left = Math.random() * (window.innerWidth - (window.innerWidth * 0.12)) + "px";
+      rojo.style.top = "-20%";
+      juego.appendChild(rojo);
+      botellasActivas.push(rojo);
+
+      let y = -20;
+      const intervalo = setInterval(() => {
+        if (lives <= 0) {
+          rojo.remove();
+          return clearInterval(intervalo);
+        }
+        y += speed;
+        rojo.style.top = (window.innerHeight * (y / 100)) + "px";
+
+        const rojoRect = rojo.getBoundingClientRect();
+        const canastaRect = canasta.getBoundingClientRect();
+        const palmaRect = {
+          top: canastaRect.top + canastaRect.height * 0.4,
+          bottom: canastaRect.bottom,
+          left: canastaRect.left,
+          right: canastaRect.right
+        };
+
+        if (
+          rojoRect.bottom >= palmaRect.top &&
+          rojoRect.top <= palmaRect.bottom &&
+          rojoRect.right >= palmaRect.left &&
+          rojoRect.left <= palmaRect.right
+        ) {
+          score += 50;
+          speed += 0.5;
+          actualizarBarraPuntos();
+          rojo.remove();
+          if (!isShowingBien) {
+            isShowingBien = true;
+            bienOverlay.style.display = "block";
+            bienOverlay.style.animation = "popIn 0.3s ease-out forwards";
+            setTimeout(() => {
+              bienOverlay.style.display = "none";
+              isShowingBien = false;
+            }, 300);
+          }
+          clearInterval(intervalo);
+        } else if (rojoRect.top > window.innerHeight) {
+          rojo.remove();
+          clearInterval(intervalo);
+          lives--;
+          if (vidas[lives]) vidas[lives].style.background = "url('img/active.png') no-repeat center center";
+          if (vidas[lives]) vidas[lives].style.backgroundSize = "contain";
+          if (lives <= 0) {
+            clearInterval(intervaloBotellas);
+            botellasActivas.forEach(b => b.remove());
+            gameOverScreen.style.display = "flex";
+          }
+        }
+      }, 30);
+    }
+
+    function loop() {
+      updateCanasta();
+      requestAnimationFrame(loop);
+    }
+
+    // Cargar imágenes primero
+    const imagesToLoad = [
+      'img/Gatorlyte.png', 'img/mano.png', 'img/Logo.png', 'img/empty.png',
+      'img/full.png', 'img/unactive.png', 'img/active.png', 'img/bien.png',
+      'img/background-first.jpg', 'img/copyFirst.png', 'img/perdiste.png'
+    ];
+
+    let imagesLoaded = 0;
+    imagesToLoad.forEach(src => {
+      const img = new Image();
+      img.src = src;
+      img.onload = () => {
+        imagesLoaded++;
+        if (imagesLoaded === imagesToLoad.length) {
+          loadingScreen.style.display = 'none';
+          intro.style.display = 'flex';
+        }
+      };
+    });
+
+    resetearJuego();
+  </script>
+</body>
+</html>
