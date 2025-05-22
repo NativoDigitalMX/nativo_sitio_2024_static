@@ -192,3 +192,15 @@
         align-items: start;
         padding-top: 6rem;
     }
+
+    .bg-buscapina{
+       background-size: 50% auto;
+    }
+
+    /* >= 640px */
+    @media (max-width: 640px) {
+        .bg-buscapina{
+            
+            background-size: contain
+        }
+    }
