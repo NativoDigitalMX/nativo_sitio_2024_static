@@ -912,7 +912,7 @@
                         </div>
                     </div>
                     <div class="w-full sm:w-1/2 h-screen bg-fixed bg-black bg-[url(/assets/images/cases/matchpaint.jpg)] bg-cover bg-center flex justify-center items-center">
-                        <div @click="showVideo(1)" class="bg-green text-black w-28 h-28 rounded-full flex justify-center items-center border border-transparent cursor-pointer hover:bg-black hover:border-green hover:text-green">
+                        <div @click="showVideo(1)" class="bg-green text-black w-20 h-20 text-sm font-bold rounded-full flex justify-center items-center border border-transparent cursor-pointer hover:bg-black hover:border-green hover:text-green">
                             Ver video
                         </div>
                     </div>
@@ -936,7 +936,7 @@
                         </div>
                     </div>
                     <div class="bg-buscapina w-full sm:w-1/2 h-screen bg-fixed bg-[#ffc5d4] bg-[url(/assets/images/cases/Buscapina03.jpg)] bg-size[] bg-no-repeat bg-right flex justify-center items-center">
-                        <div @click="showVideo(2)" class="bg-green text-black w-28 h-28 rounded-full flex justify-center items-center border border-transparent cursor-pointer hover:bg-black hover:border-green hover:text-green">
+                        <div @click="showVideo(2)" class="bg-green text-black w-20 h-20 text-sm font-bold rounded-full flex justify-center items-center border border-transparent cursor-pointer hover:bg-black hover:border-green hover:text-green">
                             Ver video
                         </div>
                     </div>
@@ -958,7 +958,7 @@
                         </div>
                     </div>
                     <div class="w-full sm:w-1/2 h-screen bg-fixed bg-black bg-[url(/assets/images/cases/production.jpg)] bg-cover bg-center flex justify-center items-center">
-                        <div @click="showVideo(3)" class="bg-green text-black w-28 h-28 rounded-full flex justify-center items-center border border-transparent cursor-pointer hover:bg-black hover:border-green hover:text-green">
+                        <div @click="showVideo(3)" class="bg-green text-black w-20 h-20 text-sm font-bold rounded-full flex justify-center items-center border border-transparent cursor-pointer hover:bg-black hover:border-green hover:text-green">
                             Ver video
                         </div>
                     </div>
@@ -986,7 +986,7 @@
 
         </main>
 
-        <div v-if="currentVideo == 1" class="bg-black fixed top-0 left-0 w-full h-full z-20">
+        <div v-if="currentVideo == 1" class="bg-black flex justify-center items-center fixed top-0 left-0 w-full h-full z-20">
             <div @click="currentVideo = null" class="bg-green absolute top-5 right-5 text-black w-20 h-20 rounded-full flex justify-center items-center border border-transparent cursor-pointer hover:bg-black hover:border-green hover:text-green z-20">
                 Cerrar
             </div>
@@ -994,7 +994,7 @@
                 <source src="https://nativo-sitio-2024-static.s3.amazonaws.com/matchpaint.mp4" type="video/mp4">
             </video>
         </div>
-        <div v-if="currentVideo == 2" class="bg-black fixed top-0 left-0 w-full h-full z-20">
+        <div v-if="currentVideo == 2" class="bg-black flex justify-center items-center fixed top-0 left-0 w-full h-full z-20">
             <div @click="currentVideo = null" class="bg-green absolute top-5 right-5 text-black w-20 h-20 rounded-full flex justify-center items-center border border-transparent cursor-pointer hover:bg-black hover:border-green hover:text-green z-20">
                 Cerrar
             </div>
@@ -1002,7 +1002,7 @@
                 <source src="https://nativo-sitio-2024-static.s3.amazonaws.com/buscapina.mp4" type="video/mp4">
             </video>
         </div>
-        <div v-if="currentVideo == 3" class="bg-black fixed top-0 left-0 w-full h-full z-20">
+        <div v-if="currentVideo == 3" class="bg-black flex justify-center items-center fixed top-0 left-0 w-full h-full z-20">
             <div @click="currentVideo = null" class="bg-green absolute top-5 right-5 text-black w-20 h-20 rounded-full flex justify-center items-center border border-transparent cursor-pointer hover:bg-black hover:border-green hover:text-green z-20">
                 Cerrar
             </div>
@@ -1054,7 +1054,7 @@
             setTimeout(() => {
                 gsap.to(window, {
                 scrollTo: { y: "#somosnativo", offsetY: 0 },
-                duration: 2,
+                duration: 1,
                 ease: "power2.inOut"
                 });
             }, 2000); // 10 segundos
