@@ -67,18 +67,34 @@
 
     <div id="app">
         <header class="fixed w-full z-10 bg-black z-20">
-            <div class="container h-16 flex justify-between items-center">
+            <div class="h-16 px-6 lg:px-16 flex justify-between items-center">
                 <a href="" class="">
                     <img src="assets/images/logo_nativo.webp"
-                         class="w-40"
-                         alt=""
+                         class="w-36 lg:w-40"
+                         alt="Logo Nativo"
                     >
                 </a>
-                <nav class="flex justify-end items-center gap-8">
+                <div @click="showMenu = true" class="md:hidden cursor-pointer">
+                    <svg class="w-8" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256" fill-rule="nonzero"><g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M0,7.5v5h50v-5zM0,22.5v5h50v-5zM0,37.5v5h50v-5z"></path></g></g></svg>
+                </div>
+                <nav v-if="showMenu" class="absolute top-0 left-0 w-screen h-screen bg-black md:hidden flex justify-center items-center">
+                    <div @click="showMenu = false" class="absolute top-5 right-5">
+                        <svg class="w-8" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256" fill-rule="nonzero"><g fill="#fffbfb" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M9.15625,6.3125l-2.84375,2.84375l15.84375,15.84375l-15.9375,15.96875l2.8125,2.8125l15.96875,-15.9375l15.9375,15.9375l2.84375,-2.84375l-15.9375,-15.9375l15.84375,-15.84375l-2.84375,-2.84375l-15.84375,15.84375z"></path></g></g></svg>
+                    </div>
+                    <div class="flex flex-col justify-center items-center text-2xl gap-4">
+                        <button data-link="inicio" class="link">Inicio</button>
+                        <button data-link="servicios" class="link">Servicios</button>
+                        <button data-link="partners" class="link">Partners</button>
+                        <a href="https://trends.nativo.company/" class="link">Trends</a>
+                        <button data-link="casos" class="link">Casos de éxito</button>
+                        <button data-link="hablemos" class="link px-4 py-1 text-green border-2 border-green rounded-full hover:bg-green hover:text-black">Hablemos</button>
+                    </div>
+                </nav>
+                <nav class="hidden md:flex justify-end items-center gap-6">
                     <button data-link="inicio" class="link">Inicio</button>
                     <button data-link="servicios" class="link">Servicios</button>
                     <button data-link="partners" class="link">Partners</button>
-                    <a href="https://trends.nativo.company/" target="_blank" class="link">Trends</a>
+                    <a href="https://trends.nativo.company/" class="link">Trends</a>
                     <button data-link="casos" class="link">Casos de éxito</button>
                     <button data-link="hablemos" class="link px-4 py-1 text-green border-2 border-green rounded-full hover:bg-green hover:text-black">Hablemos</button>
                 </nav>
@@ -98,7 +114,7 @@
             <!-- End Screen 1 -->
 
             <!-- Init Screen 2 - NAV HORIZONTAL -->
-            <div class="container-screen2 w-[400%] text-4xl sm:text-8xl leading-[1.7rem] sm:leading-[4.26rem]">
+            <div class="container-screen2 w-[400%] text-4xl sm:text-8xl leading-[1.7rem] sm:leading-[4.26rem]" id="somosnativo">
                 <div class="panel">
                     <div class="relative font-bold max-w-[320px] sm:max-w-none text-[4rem] leading-[2.8rem] sm:text-[10rem] sm:leading-[7rem] screen2-text1">
                         <span class="inline-block translate-x-3">SOMOS</span>
@@ -166,7 +182,7 @@
 
             <!-- Init Screen 3 - VIDEO REEL -->
                 <div class="w-full sm:min-h-screen flex flex-col justify-center items-center container-screen3">
-                <video class="videoItem w-screen h-auto sm:h-screen object-contain object-center sm:px-8 mx-auto screen3-videoItem" autoplay muted loop>
+                <video class="videoItem w-screen h-auto sm:h-screen object-contain object-center sm:px-8 mx-auto screen3-videoItem" controls autoplay muted loop>
                     <source src="https://nativo-sitio-2024-static.s3.amazonaws.com/assets/images/reel_nativo.mp4" type="video/mp4">
                 </video>
             </div>
@@ -895,7 +911,10 @@
                             </p>
                         </div>
                     </div>
-                    <div class="w-1/2 h-screen bg-fixed bg-green bg-[url(/assets/images/cases/matchpaint.jpg)] bg-cover bg-center">
+                    <div class="w-1/2 h-screen bg-fixed bg-black bg-[url(/assets/images/cases/matchpaint.jpg)] bg-cover bg-center flex justify-center items-center">
+                        <div @click="showVideo(1)" class="bg-green text-black w-28 h-28 rounded-full flex justify-center items-center border border-transparent cursor-pointer hover:bg-black hover:border-green hover:text-green">
+                            Ver video
+                        </div>
                     </div>
                 </section>
                 <section class="w-full flex justify-center items-center">
@@ -917,31 +936,12 @@
                             </p>
                         </div>
                     </div>
-                    <div class="w-1/2 h-screen bg-fixed bg-green bg-[url(/assets/images/cases/Buscapinafem.png)] bg-cover bg-center">
-                    </div>
-                </section>
-                <section class="w-full flex justify-center items-center">
-                    <div class="w-1/2 flex justify-center item-center">
-                        <div class="w-full px-16">
-                            <h3 class="w-full mx-auto max-w-6xl text-3xl md:text-4xl lg:text-6xl font-bold">
-                                RENUEVA 
-                                <br>
-                                Y GANA
-                            </h4>
-                            <div class="my-4">
-                                <strong>Marca</strong>: Oster
-                                <br>
-                                <strong>Créditos</strong>: NATIVO
-                            </div>
-                            <p class="font-light text-base">
-                                Para celebrar los 100 años de Oster en México, creamos una promoción diseñada para incentivar las compras y premiar la fidelidad de nuestros clientes. Con 84% más participaciones de las previstas, renovamos más que la cocina de nuestros clientes, renovamos su vida.
-                            </p>
+                    <div class="w-1/2 h-screen bg-fixed bg-[#ffc5d4] bg-[url(/assets/images/cases/Buscapina03.jpg)] bg-size[] bg-no-repeat bg-right flex justify-center items-center" style="background-size: 50% auto;">
+                        <div @click="showVideo(2)" class="bg-green text-black w-28 h-28 rounded-full flex justify-center items-center border border-transparent cursor-pointer hover:bg-black hover:border-green hover:text-green">
+                            Ver video
                         </div>
                     </div>
-                    <div class="w-1/2 h-screen bg-fixed bg-green bg-[url(/assets/images/cases/matchpaint.jpg)] bg-cover bg-center">
-                    </div>
                 </section>
-                
                 <section class="w-full flex justify-center items-center">
                     <div class="w-1/2 flex justify-center item-center">
                         <div class="w-full px-16">
@@ -958,7 +958,10 @@
                             </p>
                         </div>
                     </div>
-                    <div class="w-1/2 h-screen bg-green bg-[url(/assets/images/cases/matchpaint.jpg)] bg-cover bg-center">
+                    <div class="w-1/2 h-screen bg-fixed bg-black bg-[url(/assets/images/cases/production.jpg)] bg-cover bg-center flex justify-center items-center">
+                        <div @click="showVideo(3)" class="bg-green text-black w-28 h-28 rounded-full flex justify-center items-center border border-transparent cursor-pointer hover:bg-black hover:border-green hover:text-green">
+                            Ver video
+                        </div>
                     </div>
                 </section>
 
@@ -973,6 +976,8 @@
                     <span class="text-[4rem] md:text-[8.9rem]">NOSOTROS</span>
                 </h1>
                 <div class="text-[1.7rem] leading-[1.4rem] md:text-[4rem] md:leading-[3rem] flex flex-col justify-center item-center">
+                    
+                    <a class="block font-bold text-center hover:text-violet" target="_blank" href="tel:5563795037">LLÁMANOS</a>
                     <a class="block font-bold text-center hover:text-violet" target="_blank" href="mailto:talent@nativo.company">TRABAJA CON NOSOTROS</a>
                     <a class="block font-bold text-center hover:text-violet" target="_blank" href="mailto:hello@nativo.company">HELLO@NATIVO.COMPANY</a>
                     <a class="block font-bold text-center hover:text-violet" target="_blank" href="https://mx.linkedin.com/company/nativocom">LINKEDIN</a>
@@ -981,6 +986,31 @@
             </div>
 
         </main>
+
+        <div v-if="currentVideo == 1" class="bg-black fixed top-0 left-0 w-full h-full z-20">
+            <div @click="currentVideo = null" class="bg-green absolute top-5 right-5 text-black w-20 h-20 rounded-full flex justify-center items-center border border-transparent cursor-pointer hover:bg-black hover:border-green hover:text-green z-20">
+                Cerrar
+            </div>
+            <video class="w-screen h-auto sm:h-screen object-contain object-center sm:px-8 mx-auto screen3-videoItem" controls autoplay>
+                <source src="https://nativo-sitio-2024-static.s3.amazonaws.com/buscapina.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div v-if="currentVideo == 2" class="bg-black fixed top-0 left-0 w-full h-full z-20">
+            <div @click="currentVideo = null" class="bg-green absolute top-5 right-5 text-black w-20 h-20 rounded-full flex justify-center items-center border border-transparent cursor-pointer hover:bg-black hover:border-green hover:text-green z-20">
+                Cerrar
+            </div>
+            <video class="w-screen h-auto sm:h-screen object-contain object-center sm:px-8 mx-auto screen3-videoItem" controls autoplay>
+                <source src="https://nativo-sitio-2024-static.s3.amazonaws.com/matchpaint.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div v-if="currentVideo == 3" class="bg-black fixed top-0 left-0 w-full h-full z-20">
+            <div @click="currentVideo = null" class="bg-green absolute top-5 right-5 text-black w-20 h-20 rounded-full flex justify-center items-center border border-transparent cursor-pointer hover:bg-black hover:border-green hover:text-green z-20">
+                Cerrar
+            </div>
+            <video class="w-screen h-auto sm:h-screen object-contain object-center sm:px-8 mx-auto screen3-videoItem" controls autoplay>
+                <source src="https://nativo-sitio-2024-static.s3.amazonaws.com/nativo_produccion.mp4" type="video/mp4">
+            </video>
+        </div>
     </div>
 
     <script>
@@ -990,7 +1020,9 @@
             data() {
                 return {
                     pilar_active: 1,
-                    service_active: 1
+                    service_active: 1,
+                    currentVideo: null,
+                    showMenu: false
                 }
             },
             methods: {
@@ -1007,11 +1039,25 @@
                 showService(service) {
                     this.service_active = service;
                 },
+                showVideo(id) {
+                    this.currentVideo = id;
+                },
             },
         }).mount('#app')
     </script>
 
     <script>
+
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                gsap.to(window, {
+                scrollTo: { y: "#somosnativo", offsetY: 0 },
+                duration: 2,
+                ease: "power2.inOut"
+                });
+            }, 2000); // 10 segundos
+        });
+
         // use a script tag or an external JS file
         document.addEventListener("DOMContentLoaded", (event) => {
             gsap.registerPlugin(ScrollTrigger,Observer,ScrollToPlugin)
